@@ -1,0 +1,2625 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOSIOPEDIA - SMAN 12 GOWA | Portal Edukasi Sosiologi</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#16a34a',
+              600: '#15803d',
+              700: '#166534',
+              800: '#14532d',
+              900: '#052e16',
+            },
+            navy: {
+              800: '#1e293b',
+              900: '#0f172a'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
+    .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: #f1f5f9; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    .hero-glow {
+      background: radial-gradient(circle at 50% 30%, rgba(22, 163, 74, 0.12) 0%, rgba(248, 250, 252, 0) 70%);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- HEADER UTAMA -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Identitas Sekolah & Logo -->
+      <div onclick="switchTab('home')" class="flex items-center space-x-3.5 cursor-pointer group">
+        <div class="w-14 h-14 flex-shrink-0 bg-slate-100 rounded-full p-1 border-2 border-brand-500 shadow-sm flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform">
+          <!-- Vektor Logo Presisi SMAN 12 Gowa -->
+          <svg viewBox="0 0 500 500" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="250" cy="250" r="240" fill="#c0c0c0" stroke="#dc2626" stroke-width="18" />
+            <circle cx="250" cy="250" r="226" fill="#c7c7c7" stroke="#ffffff" stroke-width="6" />
+            <path d="M 250,330 A 130,130 0 0,1 250,70 A 130,130 0 0,1 250,330 Z" fill="#facc15" />
+            <g stroke="#eab308" stroke-width="7" stroke-linecap="round">
+              <line x1="250" y1="200" x2="250" y2="100" />
+              <line x1="250" y1="200" x2="280" y2="105" /><line x1="250" y1="200" x2="220" y2="105" />
+              <line x1="250" y1="200" x2="310" y2="120" /><line x1="250" y1="200" x2="190" y2="120" />
+              <line x1="250" y1="200" x2="335" y2="145" /><line x1="250" y1="200" x2="165" y2="145" />
+              <line x1="250" y1="200" x2="350" y2="180" /><line x1="250" y1="200" x2="150" y2="180" />
+              <line x1="250" y1="200" x2="355" y2="215" /><line x1="250" y1="200" x2="145" y2="215" />
+            </g>
+            <path d="M 210,130 Q 240,65 270,115 Q 285,150 250,165 Q 215,160 210,130 Z" fill="#dc2626" />
+            <path d="M 205,145 L 190,160 L 220,155 Z" fill="#991b1b" />
+            <path d="M 110,315 Q 240,270 380,320 L 370,330 Q 240,290 120,335 Z" fill="#1e293b" />
+            <path d="M 125,310 Q 245,268 375,313 Q 250,290 125,310 Z" fill="#ffffff" />
+            <text x="250" y="303" font-size="20" font-weight="900" fill="#0f172a" text-anchor="middle" font-family="sans-serif">2008</text>
+            <path d="M 345,200 L 320,295 L 305,300 L 325,200 Z" fill="#0f172a" />
+            <g fill="#eab308" stroke="#ca8a04" stroke-width="2">
+              <ellipse cx="65" cy="240" rx="14" ry="24" transform="rotate(-30 65 240)" />
+              <ellipse cx="80" cy="190" rx="14" ry="24" transform="rotate(-20 80 190)" />
+              <ellipse cx="105" cy="145" rx="14" ry="24" transform="rotate(-10 105 145)" />
+              <ellipse cx="140" cy="110" rx="14" ry="24" transform="rotate(5 140 110)" />
+              <ellipse cx="180" cy="85" rx="14" ry="24" transform="rotate(20 180 85)" />
+              <ellipse cx="65" cy="295" rx="14" ry="24" transform="rotate(-45 65 295)" />
+              <ellipse cx="80" cy="350" rx="14" ry="24" transform="rotate(-60 80 350)" />
+              <ellipse cx="115" cy="395" rx="14" ry="24" transform="rotate(-75 115 395)" />
+            </g>
+            <g fill="#ffffff" stroke="#15803d" stroke-width="4">
+              <circle cx="430" cy="240" r="15" /><circle cx="415" cy="190" r="15" />
+              <circle cx="390" cy="145" r="15" /><circle cx="355" cy="110" r="15" />
+              <circle cx="310" cy="85" r="15" /><circle cx="430" cy="295" r="15" />
+              <circle cx="410" cy="350" r="15" /><circle cx="375" cy="395" r="15" />
+            </g>
+            <text x="250" y="365" font-size="34" font-weight="900" fill="#0f172a" text-anchor="middle" font-family="sans-serif">SMA NEGERI 12</text>
+            <text x="250" y="405" font-size="32" font-weight="900" fill="#0f172a" text-anchor="middle" font-family="sans-serif">GOWA</text>
+            <path d="M 120,410 Q 250,470 380,410 Q 250,490 120,410 Z" fill="#0f172a" />
+            <text x="250" y="450" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="sans-serif" letter-spacing="4">SULAWESI SELATAN</text>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-black tracking-widest text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-full border border-brand-200">SOSIOPEDIA</span>
+            <span class="text-[11px] font-semibold text-slate-400">SMAN 12 GOWA</span>
+          </div>
+          <h1 class="text-base sm:text-lg font-black text-slate-800 tracking-tight leading-snug">SMA NEGERI 12 GOWA</h1>
+          <p class="text-[11px] text-slate-500 font-medium">Created by: <span class="font-bold text-slate-700">MUH. FADHLI NUGRAHA M</span></p>
+        </div>
+      </div>
+
+      <!-- Navigasi Menu Desktop & Tombol Admin -->
+      <div class="flex items-center space-x-2">
+        <nav class="hidden md:flex items-center bg-slate-100 p-1.5 rounded-2xl border border-slate-200 space-x-1">
+          <button onclick="switchTab('home')" id="nav-home" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 bg-brand-600 text-white shadow-sm">
+            <i class="fa-solid fa-house"></i>
+            <span>Beranda</span>
+          </button>
+          <button onclick="switchTab('simulasi')" id="nav-simulasi" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-white">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Simulasi TKA</span>
+          </button>
+          <button onclick="switchTab('materi')" id="nav-materi" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-white">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Materi</span>
+          </button>
+          <button onclick="switchTab('assessment')" id="nav-assessment" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-white">
+            <i class="fa-solid fa-file-signature text-amber-500"></i>
+            <span>Assessment</span>
+          </button>
+          <button onclick="switchTab('quiz')" id="nav-quiz" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-white">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Kuis & Game</span>
+          </button>
+          <button onclick="switchTab('siswa')" id="nav-siswa" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-white">
+            <i class="fa-solid fa-users"></i>
+            <span>Data Siswa</span>
+          </button>
+        </nav>
+
+        <!-- Tombol Admin Guru (PIN Protected: 2202) -->
+        <button onclick="requireTeacherAccess('adminPanel')" title="Akses Pengaturan Guru" class="p-2.5 sm:px-3 sm:py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl border border-slate-300 font-bold text-xs flex items-center space-x-1.5 transition">
+          <i class="fa-solid fa-lock text-slate-500"></i>
+          <span class="hidden sm:inline">Panel Guru</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigasi Mobile Bawah Header -->
+    <div class="md:hidden flex items-center justify-around border-t border-slate-200 bg-white px-2 py-2 overflow-x-auto">
+      <button onclick="switchTab('home')" id="mob-home" class="flex-1 py-1.5 px-2 text-center text-xs font-bold text-brand-600 border-b-2 border-brand-600 whitespace-nowrap">
+        <i class="fa-solid fa-house block text-sm mb-0.5"></i>Beranda
+      </button>
+      <button onclick="switchTab('simulasi')" id="mob-simulasi" class="flex-1 py-1.5 px-2 text-center text-xs font-bold text-slate-500 hover:text-slate-800 whitespace-nowrap">
+        <i class="fa-solid fa-graduation-cap block text-sm mb-0.5"></i>Simulasi
+      </button>
+      <button onclick="switchTab('materi')" id="mob-materi" class="flex-1 py-1.5 px-2 text-center text-xs font-bold text-slate-500 hover:text-slate-800 whitespace-nowrap">
+        <i class="fa-solid fa-book-open block text-sm mb-0.5"></i>Materi
+      </button>
+      <button onclick="switchTab('assessment')" id="mob-assessment" class="flex-1 py-1.5 px-2 text-center text-xs font-bold text-slate-500 hover:text-slate-800 whitespace-nowrap">
+        <i class="fa-solid fa-file-signature block text-sm mb-0.5 text-amber-500"></i>Asesmen
+      </button>
+      <button onclick="switchTab('quiz')" id="mob-quiz" class="flex-1 py-1.5 px-2 text-center text-xs font-bold text-slate-500 hover:text-slate-800 whitespace-nowrap">
+        <i class="fa-solid fa-gamepad block text-sm mb-0.5"></i>Kuis
+      </button>
+      <button onclick="switchTab('siswa')" id="mob-siswa" class="flex-1 py-1.5 px-2 text-center text-xs font-bold text-slate-500 hover:text-slate-800 whitespace-nowrap">
+        <i class="fa-solid fa-users block text-sm mb-0.5"></i>Siswa
+      </button>
+    </div>
+  </header>
+
+  <!-- KONTEN UTAMA -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+    <!-- TAB 0: BERANDA -->
+    <section id="tab-home-content" class="tab-pane block space-y-10 hero-glow py-4 sm:py-8">
+      <div class="max-w-4xl mx-auto text-center space-y-6">
+        <div class="w-32 h-32 sm:w-40 sm:h-40 mx-auto bg-white rounded-full p-2.5 shadow-xl border-4 border-brand-500 flex items-center justify-center transform hover:scale-105 transition duration-300">
+          <svg viewBox="0 0 500 500" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="250" cy="250" r="240" fill="#c0c0c0" stroke="#dc2626" stroke-width="18" />
+            <circle cx="250" cy="250" r="226" fill="#c7c7c7" stroke="#ffffff" stroke-width="6" />
+            <path d="M 250,330 A 130,130 0 0,1 250,70 A 130,130 0 0,1 250,330 Z" fill="#facc15" />
+            <g stroke="#eab308" stroke-width="7" stroke-linecap="round">
+              <line x1="250" y1="200" x2="250" y2="100" /><line x1="250" y1="200" x2="280" y2="105" /><line x1="250" y1="200" x2="220" y2="105" />
+              <line x1="250" y1="200" x2="310" y2="120" /><line x1="250" y1="200" x2="190" y2="120" />
+              <line x1="250" y1="200" x2="335" y2="145" /><line x1="250" y1="200" x2="165" y2="145" />
+              <line x1="250" y1="200" x2="350" y2="180" /><line x1="250" y1="200" x2="150" y2="180" />
+              <line x1="250" y1="200" x2="355" y2="215" /><line x1="250" y1="200" x2="145" y2="215" />
+            </g>
+            <path d="M 210,130 Q 240,65 270,115 Q 285,150 250,165 Q 215,160 210,130 Z" fill="#dc2626" />
+            <path d="M 205,145 L 190,160 L 220,155 Z" fill="#991b1b" />
+            <path d="M 110,315 Q 240,270 380,320 L 370,330 Q 240,290 120,335 Z" fill="#1e293b" />
+            <path d="M 125,310 Q 245,268 375,313 Q 250,290 125,310 Z" fill="#ffffff" />
+            <text x="250" y="303" font-size="20" font-weight="900" fill="#0f172a" text-anchor="middle" font-family="sans-serif">2008</text>
+            <path d="M 345,200 L 320,295 L 305,300 L 325,200 Z" fill="#0f172a" />
+            <g fill="#eab308" stroke="#ca8a04" stroke-width="2">
+              <ellipse cx="65" cy="240" rx="14" ry="24" transform="rotate(-30 65 240)" />
+              <ellipse cx="80" cy="190" rx="14" ry="24" transform="rotate(-20 80 190)" />
+              <ellipse cx="105" cy="145" rx="14" ry="24" transform="rotate(-10 105 145)" />
+              <ellipse cx="140" cy="110" rx="14" ry="24" transform="rotate(5 140 110)" />
+              <ellipse cx="180" cy="85" rx="14" ry="24" transform="rotate(20 180 85)" />
+              <ellipse cx="65" cy="295" rx="14" ry="24" transform="rotate(-45 65 295)" />
+              <ellipse cx="80" cy="350" rx="14" ry="24" transform="rotate(-60 80 350)" />
+              <ellipse cx="115" cy="395" rx="14" ry="24" transform="rotate(-75 115 395)" />
+            </g>
+            <g fill="#ffffff" stroke="#15803d" stroke-width="4">
+              <circle cx="430" cy="240" r="15" /><circle cx="415" cy="190" r="15" />
+              <circle cx="390" cy="145" r="15" /><circle cx="355" cy="110" r="15" />
+              <circle cx="310" cy="85" r="15" /><circle cx="430" cy="295" r="15" />
+              <circle cx="410" cy="350" r="15" /><circle cx="375" cy="395" r="15" />
+            </g>
+            <text x="250" y="365" font-size="34" font-weight="900" fill="#0f172a" text-anchor="middle" font-family="sans-serif">SMA NEGERI 12</text>
+            <text x="250" y="405" font-size="32" font-weight="900" fill="#0f172a" text-anchor="middle" font-family="sans-serif">GOWA</text>
+            <path d="M 120,410 Q 250,470 380,410 Q 250,490 120,410 Z" fill="#0f172a" />
+            <text x="250" y="450" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle" font-family="sans-serif" letter-spacing="4">SULAWESI SELATAN</text>
+          </svg>
+        </div>
+
+        <div class="space-y-3">
+          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-100/80 border border-brand-300 text-brand-800 text-xs font-black tracking-wide">
+            <i class="fa-solid fa-graduation-cap text-brand-700"></i>
+            <span>PORTAL RESMI PEMBELAJARAN SOSIOLOGI</span>
+          </div>
+          <h2 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight">
+            <span class="bg-gradient-to-r from-brand-600 via-emerald-600 to-teal-700 bg-clip-text text-transparent">SOSIOPEDIA</span>
+          </h2>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-800">SMA NEGERI 12 GOWA</h3>
+          <p class="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-widest">
+            Created by: <span class="text-brand-700 font-black">MUH. FADHLI NUGRAHA M</span>
+          </p>
+          <p class="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed pt-2">
+            Selamat datang di media pembelajaran interaktif sosiologi. Tingkatkan pemahaman konsep masyarakat, hadapi simulasi Tes Kemampuan Akademik (TKA) 2026, dan uji nalar kritis melalui studi kasus terstruktur.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="switchTab('simulasi')" class="px-7 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-extrabold rounded-2xl text-sm shadow-lg shadow-brand-600/25 transition transform active:scale-95 flex items-center space-x-2">
+            <i class="fa-solid fa-play"></i>
+            <span>Mulai Simulasi TKA 2026</span>
+          </button>
+          <button onclick="switchTab('materi')" class="px-7 py-3.5 bg-white hover:bg-slate-100 text-slate-800 font-extrabold rounded-2xl text-sm border-2 border-slate-300 shadow-sm transition flex items-center space-x-2">
+            <i class="fa-solid fa-book-open text-brand-600"></i>
+            <span>Jelajahi Modul Materi</span>
+          </button>
+          <button onclick="switchTab('assessment')" class="px-7 py-3.5 bg-amber-500 hover:bg-amber-600 text-white font-extrabold rounded-2xl text-sm shadow-md transition flex items-center space-x-2">
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Menu Assessment</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- KARTU MENU NAVIGASI UTAMA (5 Kolom Seimbang) -->
+      <div class="pt-6 max-w-6xl mx-auto">
+        <div class="text-center mb-6">
+          <h4 class="text-xs font-black uppercase tracking-widest text-slate-400">PILIHAN MENU SOSIOPEDIA</h4>
+          <p class="text-lg font-black text-slate-800">Akses Cepat Fitur Pembelajaran</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div onclick="switchTab('simulasi')" class="group cursor-pointer bg-white rounded-3xl p-5 border-2 border-slate-200 hover:border-brand-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600 text-xl font-black group-hover:bg-brand-600 group-hover:text-white transition">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase text-brand-600 tracking-wider">Ujian Mandiri</span>
+              <h5 class="text-base font-black text-slate-800 group-hover:text-brand-700 transition">Simulasi TKA</h5>
+              <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">40 Butir soal TKA 2026 resmi, opsi teracak otomatis, skor instan, dan pembahasan.</p>
+            </div>
+            <div class="pt-2 flex items-center text-xs font-bold text-brand-600 space-x-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Simulasi</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </div>
+          </div>
+
+          <div onclick="switchTab('materi')" class="group cursor-pointer bg-white rounded-3xl p-5 border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 text-xl font-black group-hover:bg-emerald-600 group-hover:text-white transition">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase text-emerald-600 tracking-wider">Materi Pokok</span>
+              <h5 class="text-base font-black text-slate-800 group-hover:text-emerald-700 transition">Materi Pelajaran</h5>
+              <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">3 Modul Pokok: Pengelompokan, Masalah Kelompok, & Kesetaraan Keberagaman.</p>
+            </div>
+            <div class="pt-2 flex items-center text-xs font-bold text-emerald-600 space-x-1 group-hover:translate-x-1 transition-transform">
+              <span>Pelajari Modul</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </div>
+          </div>
+
+          <div onclick="switchTab('assessment')" class="group cursor-pointer bg-white rounded-3xl p-5 border-2 border-slate-200 hover:border-amber-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 text-xl font-black group-hover:bg-amber-600 group-hover:text-white transition">
+              <i class="fa-solid fa-file-signature"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase text-amber-600 tracking-wider">Evaluasi Guru</span>
+              <h5 class="text-base font-black text-slate-800 group-hover:text-amber-700 transition">Assessment</h5>
+              <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Gerbang asesmen terproteksi kode guru (SMAN12) untuk evaluasi berkala.</p>
+            </div>
+            <div class="pt-2 flex items-center text-xs font-bold text-amber-600 space-x-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Asesmen</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </div>
+          </div>
+
+          <div onclick="switchTab('quiz')" class="group cursor-pointer bg-white rounded-3xl p-5 border-2 border-slate-200 hover:border-rose-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center text-rose-600 text-xl font-black group-hover:bg-rose-600 group-hover:text-white transition">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase text-rose-600 tracking-wider">Asah Otak</span>
+              <h5 class="text-base font-black text-slate-800 group-hover:text-rose-700 transition">Kuis & Game</h5>
+              <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Pilihan ganda cepat, kuis benar/salah, serta TTS santai berkuota bantuan.</p>
+            </div>
+            <div class="pt-2 flex items-center text-xs font-bold text-rose-600 space-x-1 group-hover:translate-x-1 transition-transform">
+              <span>Mainkan Game</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </div>
+          </div>
+
+          <div onclick="switchTab('siswa')" class="group cursor-pointer bg-white rounded-3xl p-5 border-2 border-slate-200 hover:border-blue-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 text-xl font-black group-hover:bg-blue-600 group-hover:text-white transition">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-black uppercase text-blue-600 tracking-wider">Direktori</span>
+              <h5 class="text-base font-black text-slate-800 group-hover:text-blue-700 transition">Data Siswa</h5>
+              <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Daftar kelas XII IPS 1-2 & IPA 1-3, pencarian NIS, dan ekspor rekap CSV.</p>
+            </div>
+            <div class="pt-2 flex items-center text-xs font-bold text-blue-600 space-x-1 group-hover:translate-x-1 transition-transform">
+              <span>Lihat Siswa</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB ASSESSMENT: KODE AKSES TERPROTEKSI & SOAL KOSONG (STANDBY) -->
+    <section id="tab-assessment-content" class="tab-pane hidden space-y-6">
+      <div id="assessment-auth-pane" class="max-w-xl mx-auto bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+        <div class="text-center space-y-2">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 text-2xl font-black">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <span class="px-3 py-1 bg-amber-100 text-amber-800 text-[10px] font-black rounded-full uppercase tracking-wider">Evaluasi Belajar Terproteksi</span>
+          <h3 class="text-xl font-black text-slate-800">ASSESSMENT SOSIOLOGI</h3>
+          <p class="text-xs text-slate-500">Masukkan kode akses resmi dari Guru (SMAN12) untuk membuka sesi asesmen.</p>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">
+              <i class="fa-solid fa-key text-amber-500 mr-1"></i> Kode Akses dari Guru:
+            </label>
+            <input type="text" id="assessment-input-code" placeholder="Ketik kode akses (Contoh: SMAN12)" autocomplete="off"
+              onkeydown="if(event.key === 'Enter') verifyAssessmentAccess();"
+              class="w-full p-3.5 bg-slate-50 border-2 border-slate-300 focus:border-amber-500 rounded-2xl text-xs sm:text-sm font-black tracking-widest uppercase outline-none text-slate-800">
+            <p id="assessment-code-error" class="hidden text-rose-600 text-[11px] font-bold mt-1.5 flex items-center space-x-1">
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <span>Kode akses salah! Pastikan memasukkan kode resmi dari guru (SMAN12).</span>
+            </p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">
+              <i class="fa-solid fa-user text-slate-400 mr-1"></i> Nama Lengkap Siswa:
+            </label>
+            <input type="text" id="assessment-input-nama" placeholder="Ketik nama lengkap Anda..."
+              class="w-full p-3.5 bg-slate-50 border border-slate-300 rounded-2xl text-xs sm:text-sm font-semibold outline-none focus:ring-2 focus:ring-amber-500 text-slate-800">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">
+              <i class="fa-solid fa-chalkboard-user text-slate-400 mr-1"></i> Pilih Rombongan Belajar (Kelas):
+            </label>
+            <select id="assessment-input-kelas" class="w-full p-3.5 bg-slate-50 border border-slate-300 rounded-2xl text-xs sm:text-sm font-semibold outline-none focus:ring-2 focus:ring-amber-500 text-slate-800">
+              <option value="">-- Pilih Kelas --</option>
+              <option value="XII IPS 1">XII IPS 1</option>
+              <option value="XII IPS 2">XII IPS 2</option>
+              <option value="XII IPA 1">XII IPA 1</option>
+              <option value="XII IPA 2">XII IPA 2</option>
+              <option value="XII IPA 3">XII IPA 3</option>
+            </select>
+          </div>
+
+          <div class="p-4 bg-amber-50/70 border border-amber-200 rounded-2xl text-amber-900 text-xs space-y-1">
+            <p class="font-bold flex items-center space-x-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i>
+              <span>Status Asesmen:</span>
+            </p>
+            <p class="text-[11px] text-amber-800 leading-relaxed">
+              Ruang asesmen ini diproteksi oleh Guru pengampu mata pelajaran Sosiologi SMA Negeri 12 Gowa.
+            </p>
+          </div>
+
+          <button onclick="verifyAssessmentAccess()" class="w-full py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-extrabold rounded-2xl text-sm shadow-md transition transform active:scale-95 flex items-center justify-center space-x-2">
+            <span>Buka & Masuk Asesmen</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="assessment-exam-pane" class="hidden max-w-2xl mx-auto space-y-6">
+        <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm text-center space-y-6">
+          <div class="w-20 h-20 mx-auto rounded-3xl bg-amber-50 border-2 border-amber-300 flex items-center justify-center text-amber-600 text-3xl font-black">
+            <i class="fa-regular fa-folder-open"></i>
+          </div>
+
+          <div class="space-y-2">
+            <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-black uppercase tracking-wider">
+              Ruang Asesmen Aktif
+            </span>
+            <h3 class="text-xl sm:text-2xl font-black text-slate-800">Bank Soal Belum Dirilis Guru</h3>
+            <p class="text-xs sm:text-sm text-slate-500 max-w-md mx-auto leading-relaxed">
+              Halo, <b id="assessment-display-name" class="text-slate-800">-</b> (<span id="assessment-display-kelas" class="text-amber-700 font-bold">-</span>)! Kode akses <b>SMAN12</b> berhasil diverifikasi. Saat ini butir soal asesmen masih dalam tahap penyusunan oleh guru pengampu dan akan segera diaktifkan saat jam evaluasi dimulai.
+            </p>
+          </div>
+
+          <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-slate-600 text-xs space-y-2 text-left max-w-md mx-auto">
+            <div class="flex items-center space-x-2 font-bold text-slate-800">
+              <i class="fa-solid fa-circle-check text-brand-600"></i>
+              <span>Status Pendaftaran Terverifikasi</span>
+            </div>
+            <p class="text-[11px] text-slate-500">
+              Sistem telah mendeteksi identitas Anda. Sembari menunggu guru mengunggah naskah soal asesmen, Anda dapat mempelajari kembali Modul Pembelajaran atau mencoba Simulasi TKA 2026.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <button onclick="switchTab('materi')" class="px-6 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition flex items-center space-x-2 shadow-sm">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Baca Modul Materi</span>
+            </button>
+            <button onclick="resetAssessment()" class="px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center space-x-2">
+              <i class="fa-solid fa-arrow-left"></i>
+              <span>Kembali</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 1: SIMULASI TKA 2026 -->
+    <section id="tab-simulasi-content" class="tab-pane hidden space-y-6">
+      <div id="simulasi-reg-pane" class="max-w-xl mx-auto bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md space-y-6">
+        <div class="text-center space-y-2">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600 text-2xl font-black">
+            <i class="fa-solid fa-user-pen"></i>
+          </div>
+          <h3 class="text-xl font-black text-slate-800">Registrasi Simulasi TKA 2026</h3>
+          <p class="text-xs text-slate-500">Silakan masukkan identitas diri sebelum memulai 40 butir soal sosiologi.</p>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">Nama Lengkap Siswa:</label>
+            <input type="text" id="sim-input-nama" placeholder="Ketik nama lengkap Anda..."
+              class="w-full p-3.5 bg-slate-50 border border-slate-300 rounded-2xl text-xs sm:text-sm font-semibold outline-none focus:ring-2 focus:ring-brand-500 text-slate-800">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1.5">Pilih Rombongan Belajar (Kelas):</label>
+            <select id="sim-input-kelas" class="w-full p-3.5 bg-slate-50 border border-slate-300 rounded-2xl text-xs sm:text-sm font-semibold outline-none focus:ring-2 focus:ring-brand-500 text-slate-800">
+              <option value="">-- Pilih Kelas --</option>
+              <option value="XII IPS 1">XII IPS 1</option>
+              <option value="XII IPS 2">XII IPS 2</option>
+              <option value="XII IPA 1">XII IPA 1</option>
+              <option value="XII IPA 2">XII IPA 2</option>
+              <option value="XII IPA 3">XII IPA 3</option>
+            </select>
+          </div>
+
+          <div class="p-4 bg-amber-50 border border-amber-200 rounded-2xl text-amber-900 text-xs space-y-1">
+            <p class="font-bold flex items-center space-x-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i>
+              <span>Petunjuk Simulasi TKA 2026:</span>
+            </p>
+            <ul class="list-disc list-inside space-y-0.5 text-[11px] text-amber-800">
+              <li>Jumlah soal 40 butir pilihan ganda (A, B, C, D, E).</li>
+              <li>Opsi jawaban teracak secara otomatis untuk setiap peserta.</li>
+              <li>Skor akhir (0–100) dan lembar ulasan pembahasan tampil di akhir ujian.</li>
+            </ul>
+          </div>
+
+          <button onclick="startSimulation()" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-extrabold rounded-2xl text-sm shadow-md transition transform active:scale-95 flex items-center justify-center space-x-2">
+            <span>Mulai Ujian Sekarang</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="simulasi-exam-pane" class="hidden space-y-6">
+        <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600 font-black text-sm">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-slate-800" id="exam-display-name">Peserta Ujian</p>
+              <p class="text-[11px] font-semibold text-brand-600" id="exam-display-kelas">Kelas: -</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-bold text-slate-500">Soal:</span>
+            <span class="px-3 py-1 bg-slate-100 rounded-lg text-xs font-black text-slate-800" id="exam-progress-counter">1 / 40</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <span class="px-3 py-1 bg-brand-50 border border-brand-200 text-brand-700 rounded-full text-[11px] font-black uppercase tracking-wider" id="exam-question-category">
+                Kategori Soal
+              </span>
+              <span class="text-xs font-bold text-slate-400" id="exam-question-num-tag">Nomor 1</span>
+            </div>
+
+            <p class="text-sm sm:text-base font-semibold text-slate-800 leading-relaxed" id="exam-question-text">
+              Memuat naskah soal sosiologi...
+            </p>
+
+            <div class="space-y-3 pt-2" id="exam-options-container"></div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+              <button onclick="prevQuestion()" id="btn-prev-q" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center space-x-1.5">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Sebelumnya</span>
+              </button>
+              <button onclick="nextQuestion()" id="btn-next-q" class="px-6 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition flex items-center space-x-1.5">
+                <span>Berikutnya</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+              <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Palet Nomor Soal</h4>
+              <span class="text-[11px] font-semibold text-slate-400">40 Butir</span>
+            </div>
+
+            <div class="grid grid-cols-5 sm:grid-cols-8 lg:grid-cols-5 gap-2" id="exam-palette-grid"></div>
+
+            <div class="pt-3 border-t border-slate-100 space-y-2">
+              <div class="flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                <span class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded-full bg-brand-600 inline-block"></span><span>Sudah Terjawab</span></span>
+                <span class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded-full bg-slate-100 border border-slate-300 inline-block"></span><span>Belum</span></span>
+              </div>
+              <button onclick="finishExam()" class="w-full py-3 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-extrabold transition shadow-sm flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-check-double"></i>
+                <span>Kumpulkan Jawaban</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="simulasi-result-pane" class="hidden space-y-8">
+        <div class="max-w-2xl mx-auto bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md text-center space-y-6">
+          <div class="w-16 h-16 mx-auto rounded-full bg-brand-50 border-2 border-brand-500 flex items-center justify-center text-brand-600 text-3xl font-black">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+
+          <div class="space-y-1">
+            <span class="text-[11px] font-black uppercase text-brand-600 tracking-wider">HASIL AKHIR SIMULASI TKA 2026</span>
+            <h3 class="text-2xl font-black text-slate-800" id="result-student-name">Nama Peserta</h3>
+            <p class="text-xs font-bold text-slate-500" id="result-student-kelas">Kelas: -</p>
+          </div>
+
+          <div class="py-4 bg-slate-50 rounded-2xl border border-slate-200 max-w-sm mx-auto">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block">Skor Kemampuan Akademik</span>
+            <span class="text-5xl font-black text-brand-600 tracking-tight" id="result-final-score">0</span>
+            <span class="text-xs font-bold text-slate-400 block mt-1">Skala 0 - 100</span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 max-w-md mx-auto text-center text-xs">
+            <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl">
+              <span class="text-emerald-700 font-bold block">Benar</span>
+              <span class="text-lg font-black text-emerald-800" id="result-correct-count">0</span>
+            </div>
+            <div class="p-3 bg-rose-50 border border-rose-200 rounded-xl">
+              <span class="text-rose-700 font-bold block">Salah</span>
+              <span class="text-lg font-black text-rose-800" id="result-wrong-count">0</span>
+            </div>
+            <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+              <span class="text-slate-600 font-bold block">Kosong</span>
+              <span class="text-lg font-black text-slate-700" id="result-empty-count">0</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <button onclick="resetSimulation()" class="px-6 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition flex items-center space-x-2">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span>Ulangi Simulasi</span>
+            </button>
+            <button onclick="switchTab('home')" class="px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center space-x-2">
+              <i class="fa-solid fa-house"></i>
+              <span>Kembali ke Beranda</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+            <h4 class="text-base font-black text-slate-800 flex items-center space-x-2">
+              <i class="fa-solid fa-book-open text-brand-600"></i>
+              <span>Lembar Ulasan & Pembahasan Soal</span>
+            </h4>
+            <span class="text-xs font-semibold text-slate-400">40 Butir Soal</span>
+          </div>
+          <div class="space-y-4" id="review-items-container"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: MATERI -->
+    <section id="tab-materi-content" class="tab-pane hidden space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-4">
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="switchMateriSub('daftar')" id="subnav-daftar" class="px-4 py-2 rounded-xl text-xs font-bold transition bg-slate-800 text-white flex items-center space-x-2">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Daftar Modul Pembelajaran</span>
+          </button>
+          <button onclick="switchMateriSub('pengelompokan')" id="subnav-pengelompokan" class="px-4 py-2 rounded-xl text-xs font-bold transition bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 flex items-center space-x-1.5">
+            <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+            <span>Pengelompokan Sosial</span>
+          </button>
+          <button onclick="switchMateriSub('permasalahan')" id="subnav-permasalahan" class="px-4 py-2 rounded-xl text-xs font-bold transition bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 flex items-center space-x-1.5">
+            <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+            <span>Permasalahan Sosial Kelompok</span>
+          </button>
+          <button onclick="switchMateriSub('kesetaraan')" id="subnav-kesetaraan" class="px-4 py-2 rounded-xl text-xs font-bold transition bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 flex items-center space-x-1.5">
+            <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+            <span>Kesetaraan & Keberagaman</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="view-materi-daftar" class="space-y-6">
+        <div class="text-left space-y-1">
+          <h3 class="text-lg font-black text-slate-800">Modul Pembelajaran Sosiologi</h3>
+          <p class="text-xs text-slate-500">Pilih salah satu materi di bawah ini untuk mempelajari pokok bahasan dan mengerjakan studi kasusnya.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div onclick="switchMateriSub('pengelompokan')" class="group cursor-pointer bg-white rounded-3xl p-6 sm:p-7 border-2 border-slate-200 hover:border-brand-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 bg-brand-50 border border-brand-200 text-brand-700 text-[11px] font-extrabold rounded-full uppercase tracking-wider">Materi Pokok 1</span>
+                <span class="text-xs font-bold text-slate-400">7 Pokok Bahasan</span>
+              </div>
+              <div>
+                <h4 class="text-lg font-black text-slate-800 group-hover:text-brand-700 transition leading-snug">PENGELOMPOKAN SOSIAL DI MASYARAKAT</h4>
+                <p class="text-xs text-slate-500 mt-2 leading-relaxed">Kajian dasar pembentukan kelompok, kriteria Soerjono Soekanto, teori propinquity & interaksi, paguyuban-patembayan, serta evolusi Bruce Tuckman.</p>
+              </div>
+            </div>
+            <div class="pt-4 flex items-center justify-between border-t border-slate-100">
+              <span class="text-xs font-bold text-brand-600 flex items-center space-x-1.5 group-hover:translate-x-1 transition-transform">
+                <span>Pelajari Materi</span><i class="fa-solid fa-arrow-right text-xs"></i>
+              </span>
+              <div class="w-10 h-10 rounded-2xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+            </div>
+          </div>
+
+          <div onclick="switchMateriSub('permasalahan')" class="group cursor-pointer bg-white rounded-3xl p-6 sm:p-7 border-2 border-slate-200 hover:border-rose-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 bg-rose-50 border border-rose-200 text-rose-700 text-[11px] font-extrabold rounded-full uppercase tracking-wider">Materi Pokok 2</span>
+                <span class="text-xs font-bold text-slate-400">7 Pokok Masalah</span>
+              </div>
+              <div>
+                <h4 class="text-lg font-black text-slate-800 group-hover:text-rose-700 transition leading-snug">PERMASALAHAN SOSIAL DALAM LINGKUP KELOMPOK SOSIAL</h4>
+                <p class="text-xs text-slate-500 mt-2 leading-relaxed">Analisis patologi sosial, 4 faktor determinan, kemiskinan, segitiga kekerasan Johan Galtung, ketenagakerjaan, hingga ketidakadilan struktural.</p>
+              </div>
+            </div>
+            <div class="pt-4 flex items-center justify-between border-t border-slate-100">
+              <span class="text-xs font-bold text-rose-600 flex items-center space-x-1.5 group-hover:translate-x-1 transition-transform">
+                <span>Pelajari Materi</span><i class="fa-solid fa-arrow-right text-xs"></i>
+              </span>
+              <div class="w-10 h-10 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+            </div>
+          </div>
+
+          <div onclick="switchMateriSub('kesetaraan')" class="group cursor-pointer bg-white rounded-3xl p-6 sm:p-7 border-2 border-slate-200 hover:border-indigo-500 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 bg-indigo-50 border border-indigo-200 text-indigo-700 text-[11px] font-extrabold rounded-full uppercase tracking-wider">Materi Pokok 3</span>
+                <span class="text-xs font-bold text-slate-400">6 Pokok Bahasan</span>
+              </div>
+              <div>
+                <h4 class="text-lg font-black text-slate-800 group-hover:text-indigo-700 transition leading-snug">KESETARAAN DALAM PERBEDAAN SOSIAL DI MASYARAKAT</h4>
+                <p class="text-xs text-slate-500 mt-2 leading-relaxed">Hakikat keberagaman, masyarakat multikultural Furnivall & Geertz, faktor maritim-ekologis, problematika etnosentrisme, dan kesetaraan hakiki.</p>
+              </div>
+            </div>
+            <div class="pt-4 flex items-center justify-between border-t border-slate-100">
+              <span class="text-xs font-bold text-indigo-600 flex items-center space-x-1.5 group-hover:translate-x-1 transition-transform">
+                <span>Pelajari Materi</span><i class="fa-solid fa-arrow-right text-xs"></i>
+              </span>
+              <div class="w-10 h-10 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub Modul 1 -->
+      <div id="view-materi-pengelompokan" class="hidden space-y-6">
+        <div class="bg-gradient-to-r from-brand-700 to-navy-800 rounded-3xl p-6 text-white flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <span class="px-3 py-1 bg-white/20 text-white text-[11px] font-bold rounded-full uppercase">Materi Pokok 1</span>
+            <h2 class="text-xl sm:text-2xl font-black mt-2">PENGELOMPOKAN SOSIAL DI MASYARAKAT</h2>
+          </div>
+          <button onclick="switchMateriSub('daftar')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-xl text-xs font-bold transition flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-left"></i><span>Kembali ke Daftar Modul</span>
+          </button>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-4 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-3">
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider pb-2 border-b">Daftar Pokok Bahasan</h4>
+            <div class="space-y-1.5" id="pengelompokan-topics-menu"></div>
+          </div>
+          <div class="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6" id="pengelompokan-article-content"></div>
+        </div>
+      </div>
+
+      <!-- Sub Modul 2 -->
+      <div id="view-materi-permasalahan" class="hidden space-y-6">
+        <div class="bg-gradient-to-r from-rose-700 to-slate-900 rounded-3xl p-6 text-white flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <span class="px-3 py-1 bg-white/20 text-white text-[11px] font-bold rounded-full uppercase">Materi Pokok 2</span>
+            <h2 class="text-xl sm:text-2xl font-black mt-2">PERMASALAHAN SOSIAL DALAM LINGKUP KELOMPOK SOSIAL</h2>
+          </div>
+          <button onclick="switchMateriSub('daftar')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-xl text-xs font-bold transition flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-left"></i><span>Kembali ke Daftar Modul</span>
+          </button>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-4 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-3">
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider pb-2 border-b">Topik Permasalahan</h4>
+            <div class="space-y-1.5" id="permasalahan-topics-menu"></div>
+          </div>
+          <div class="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6" id="permasalahan-article-content"></div>
+        </div>
+      </div>
+
+      <!-- Sub Modul 3 -->
+      <div id="view-materi-kesetaraan" class="hidden space-y-6">
+        <div class="bg-gradient-to-r from-indigo-700 to-slate-900 rounded-3xl p-6 text-white flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <span class="px-3 py-1 bg-white/20 text-white text-[11px] font-bold rounded-full uppercase">Materi Pokok 3</span>
+            <h2 class="text-xl sm:text-2xl font-black mt-2">KESETARAAN DALAM PERBEDAAN SOSIAL DI MASYARAKAT</h2>
+          </div>
+          <button onclick="switchMateriSub('daftar')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-xl text-xs font-bold transition flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-left"></i><span>Kembali ke Daftar Modul</span>
+          </button>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-4 bg-white rounded-3xl p-5 border border-slate-200 shadow-sm space-y-3">
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider pb-2 border-b">Topik Kesetaraan</h4>
+            <div class="space-y-1.5" id="kesetaraan-topics-menu"></div>
+          </div>
+          <div class="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6" id="kesetaraan-article-content"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: KUIS & GAME -->
+    <section id="tab-quiz-content" class="tab-pane hidden space-y-6">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+        <div>
+          <h3 class="text-xl sm:text-2xl font-black text-slate-800">Arena Kuis Cepat & Mini Game Edukasi</h3>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">Pilih salah satu mode permainan di bawah untuk menguji pemahaman konsep sosiologimu!</p>
+        </div>
+      </div>
+
+      <!-- Katalog 3 Mode Kuis Berbentuk Kartu Kotak dengan Logo Visual Menarik -->
+      <div id="quiz-hub-catalog" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          
+          <!-- Kotak Mode 1: Pilihan Ganda -->
+          <div onclick="selectQuizMode('mcq')" class="group cursor-pointer bg-white rounded-3xl p-6 sm:p-7 border-2 border-slate-200 hover:border-emerald-500 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute -right-8 -top-8 w-28 h-28 bg-emerald-50 rounded-full group-hover:scale-150 transition-transform duration-500 -z-0"></div>
+            
+            <div class="space-y-4 relative z-10">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-[10px] font-black uppercase tracking-wider">Mode 01 • Uji Teori</span>
+                <span class="text-[11px] font-bold text-slate-400 flex items-center space-x-1"><i class="fa-regular fa-clock text-emerald-600"></i><span>30d / Soal</span></span>
+              </div>
+
+              <div class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-tr from-emerald-500 to-teal-400 p-0.5 shadow-lg shadow-emerald-500/30 group-hover:rotate-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                <div class="w-full h-full bg-emerald-50 rounded-[22px] flex items-center justify-center text-emerald-600 text-3xl font-black">
+                  <i class="fa-solid fa-list-check"></i>
+                </div>
+              </div>
+
+              <div class="text-center pt-2">
+                <h4 class="text-lg font-black text-slate-800 group-hover:text-emerald-600 transition">Pilihan Ganda Cepat</h4>
+                <span class="inline-block mt-1 text-[11px] font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md">Materi: Pengelompokan Sosial</span>
+                <p class="text-xs text-slate-500 mt-2.5 leading-relaxed">Tantangan 5 butir soal pilihan ganda acak dari 15 bank soal. Opsi diacak otomatis!</p>
+              </div>
+            </div>
+
+            <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+              <span class="text-xs font-black text-emerald-600 flex items-center space-x-1">
+                <span>Mulai Main</span>
+                <i class="fa-solid fa-circle-play text-sm"></i>
+              </span>
+              <div class="w-8 h-8 rounded-xl bg-emerald-50 group-hover:bg-emerald-600 text-emerald-600 group-hover:text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kotak Mode 2: Benar / Salah -->
+          <div onclick="selectQuizMode('tf')" class="group cursor-pointer bg-white rounded-3xl p-6 sm:p-7 border-2 border-slate-200 hover:border-amber-500 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute -right-8 -top-8 w-28 h-28 bg-amber-50 rounded-full group-hover:scale-150 transition-transform duration-500 -z-0"></div>
+
+            <div class="space-y-4 relative z-10">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-[10px] font-black uppercase tracking-wider">Mode 02 • Nalar Kritis</span>
+                <span class="text-[11px] font-bold text-slate-400 flex items-center space-x-1"><i class="fa-regular fa-clock text-amber-600"></i><span>30d / Soal</span></span>
+              </div>
+
+              <div class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-tr from-amber-500 to-yellow-400 p-0.5 shadow-lg shadow-amber-500/30 group-hover:-rotate-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                <div class="w-full h-full bg-amber-50 rounded-[22px] flex items-center justify-center text-amber-600 text-3xl font-black">
+                  <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+              </div>
+
+              <div class="text-center pt-2">
+                <h4 class="text-lg font-black text-slate-800 group-hover:text-amber-600 transition">Benar atau Salah?</h4>
+                <span class="inline-block mt-1 text-[11px] font-extrabold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-md">Materi: Pengelompokan Sosial</span>
+                <p class="text-xs text-slate-500 mt-2.5 leading-relaxed">Uji ketajaman berpikirmu dengan membedah 5 butir pernyataan sosiologis kilat!</p>
+              </div>
+            </div>
+
+            <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+              <span class="text-xs font-black text-amber-600 flex items-center space-x-1">
+                <span>Tantang Dirimu</span>
+                <i class="fa-solid fa-bolt text-sm"></i>
+              </span>
+              <div class="w-8 h-8 rounded-xl bg-amber-50 group-hover:bg-amber-600 text-amber-600 group-hover:text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kotak Mode 3: Teka-Teki Silang -->
+          <div onclick="selectQuizMode('tts')" class="group cursor-pointer bg-white rounded-3xl p-6 sm:p-7 border-2 border-slate-200 hover:border-rose-500 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute -right-8 -top-8 w-28 h-28 bg-rose-50 rounded-full group-hover:scale-150 transition-transform duration-500 -z-0"></div>
+
+            <div class="space-y-4 relative z-10">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 bg-rose-100 text-rose-800 rounded-full text-[10px] font-black uppercase tracking-wider">Mode 03 • Santai & Seru</span>
+                <span class="text-[11px] font-bold text-slate-400 flex items-center space-x-1"><i class="fa-solid fa-wand-magic-sparkles text-rose-600"></i><span>5 Bantuan</span></span>
+              </div>
+
+              <div class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-tr from-rose-500 to-pink-400 p-0.5 shadow-lg shadow-rose-500/30 group-hover:rotate-6 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                <div class="w-full h-full bg-rose-50 rounded-[22px] flex items-center justify-center text-rose-600 text-3xl font-black">
+                  <i class="fa-solid fa-cubes"></i>
+                </div>
+              </div>
+
+              <div class="text-center pt-2">
+                <h4 class="text-lg font-black text-slate-800 group-hover:text-rose-600 transition">Teka-Teki Silang</h4>
+                <span class="inline-block mt-1 text-[11px] font-extrabold text-rose-700 bg-rose-50 px-2.5 py-0.5 rounded-md">Materi: Masalah Sosial Kelompok</span>
+                <p class="text-xs text-slate-500 mt-2.5 leading-relaxed">Teka-teki silang 10 kata santai dan populer. Lengkap dengan 5 kali bantuan huruf emas!</p>
+              </div>
+            </div>
+
+            <div class="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between relative z-10">
+              <span class="text-xs font-black text-rose-600 flex items-center space-x-1">
+                <span>Bermain TTS</span>
+                <i class="fa-solid fa-gamepad text-sm"></i>
+              </span>
+              <div class="w-8 h-8 rounded-xl bg-rose-50 group-hover:bg-rose-600 text-rose-600 group-hover:text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Area Game MCQ -->
+      <div id="mcq-game-area" class="hidden max-w-2xl mx-auto space-y-4">
+        <div class="flex items-center justify-between pb-2">
+          <button onclick="backToQuizHub()" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center space-x-1.5">
+            <i class="fa-solid fa-arrow-left"></i><span>Pilih Kuis Lain</span>
+          </button>
+          <span class="text-xs font-bold text-brand-600">Mode Pilihan Ganda (A-D)</span>
+        </div>
+        <div id="mcq-start-card" class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-slate-200 shadow-md text-center space-y-5">
+          <div class="w-16 h-16 mx-auto rounded-3xl bg-brand-50 border-2 border-brand-300 flex items-center justify-center text-brand-600 text-3xl font-black">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+          <div class="space-y-2">
+            <h4 class="text-xl font-black text-slate-800">Kuis Pilihan Ganda: Pengelompokan Sosial</h4>
+            <p class="text-xs text-slate-500 max-w-md mx-auto">Jawab 5 soal acak dalam waktu 30 detik per nomor!</p>
+          </div>
+          <button onclick="startMCQGame()" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-extrabold rounded-2xl text-sm shadow-md transition flex items-center justify-center space-x-2">
+            <i class="fa-solid fa-play"></i><span>Mulai Kuis Pilihan Ganda</span>
+          </button>
+        </div>
+        <div id="mcq-play-card" class="hidden bg-white rounded-3xl p-6 sm:p-8 border-2 border-slate-200 shadow-md space-y-6">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <span class="px-2.5 py-1 bg-slate-100 text-slate-800 rounded-lg text-xs font-black" id="mcq-progress-label">1 / 5</span>
+            <span class="text-xs font-black text-brand-700 bg-brand-50 px-3.5 py-1.5 rounded-full border border-brand-200" id="mcq-timer-display">30s</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+            <div id="mcq-timer-bar" class="h-full bg-brand-500 transition-all duration-1000 ease-linear w-full"></div>
+          </div>
+          <p class="text-sm sm:text-base font-bold text-slate-800" id="mcq-question-text"></p>
+          <div class="space-y-2.5 pt-1" id="mcq-options-container"></div>
+          <div id="mcq-feedback-box" class="hidden p-4 rounded-2xl border text-xs space-y-2">
+            <div class="font-bold flex items-center space-x-1.5" id="mcq-feedback-title"></div>
+            <p class="text-slate-600 leading-relaxed" id="mcq-feedback-expl"></p>
+            <div class="pt-1 flex justify-end">
+              <button onclick="nextMCQQuestion()" id="mcq-btn-next" class="px-4 py-2 bg-slate-800 text-white rounded-xl text-xs font-bold">Soal Berikutnya</button>
+            </div>
+          </div>
+        </div>
+        <div id="mcq-result-card" class="hidden bg-white rounded-3xl p-6 border-2 border-slate-200 shadow-md text-center space-y-5">
+          <h4 class="text-2xl font-black text-slate-800">Skor Kuis Pilihan Ganda Anda</h4>
+          <span class="text-4xl font-black text-brand-600" id="mcq-final-score">0</span>
+          <div class="grid grid-cols-2 gap-3 max-w-xs mx-auto text-xs">
+            <div class="p-3 bg-emerald-50 rounded-xl font-bold text-emerald-800">Benar: <span id="mcq-correct-count">0</span></div>
+            <div class="p-3 bg-rose-50 rounded-xl font-bold text-rose-800">Salah: <span id="mcq-wrong-count">0</span></div>
+          </div>
+          <button onclick="startMCQGame()" class="px-5 py-2.5 bg-brand-600 text-white rounded-xl text-xs font-bold">Coba Lagi (Soal Baru)</button>
+        </div>
+      </div>
+
+      <!-- Area Game True/False -->
+      <div id="miniquiz-game-area" class="hidden max-w-2xl mx-auto space-y-4">
+        <div class="flex items-center justify-between pb-2">
+          <button onclick="backToQuizHub()" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center space-x-1.5">
+            <i class="fa-solid fa-arrow-left"></i><span>Pilih Kuis Lain</span>
+          </button>
+          <span class="text-xs font-bold text-amber-600">Mode Benar / Salah</span>
+        </div>
+        <div id="mq-start-card" class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-slate-200 shadow-md text-center space-y-5">
+          <div class="w-16 h-16 mx-auto rounded-3xl bg-amber-50 border-2 border-amber-300 flex items-center justify-center text-amber-600 text-3xl font-black">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <div class="space-y-2">
+            <h4 class="text-xl font-black text-slate-800">Tantangan Benar / Salah Sosiologi</h4>
+            <p class="text-xs text-slate-500 max-w-md mx-auto">Tentukan apakah setiap pernyataan yang muncul Benar atau Salah dalam 30 detik!</p>
+          </div>
+          <button onclick="startMiniQuizGame()" class="w-full py-3.5 bg-amber-500 hover:bg-amber-600 text-white font-extrabold rounded-2xl text-sm shadow-md transition flex items-center justify-center space-x-2">
+            <i class="fa-solid fa-play"></i><span>Mulai Tantangan Sekarang</span>
+          </button>
+        </div>
+        <div id="mq-play-card" class="hidden bg-white rounded-3xl p-6 sm:p-8 border-2 border-slate-200 shadow-md space-y-6">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <span class="px-2.5 py-1 bg-slate-100 text-slate-800 rounded-lg text-xs font-black" id="mq-progress-label">1 / 5</span>
+            <span class="text-xs font-black text-amber-700 bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200" id="mq-timer-display">30s</span>
+          </div>
+          <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+            <div id="mq-timer-bar" class="h-full bg-amber-500 transition-all duration-1000 ease-linear w-full"></div>
+          </div>
+          <p class="text-sm sm:text-base font-bold text-slate-800" id="mq-question-text"></p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1" id="mq-options-container"></div>
+          <div id="mq-feedback-box" class="hidden p-4 rounded-2xl border text-xs space-y-2">
+            <div class="font-bold flex items-center space-x-1.5" id="mq-feedback-title"></div>
+            <p class="text-slate-600 leading-relaxed" id="mq-feedback-expl"></p>
+            <div class="pt-1 flex justify-end">
+              <button onclick="nextMiniQuizQuestion()" id="mq-btn-next" class="px-4 py-2 bg-slate-800 text-white rounded-xl text-xs font-bold">Soal Berikutnya</button>
+            </div>
+          </div>
+        </div>
+        <div id="mq-result-card" class="hidden bg-white rounded-3xl p-6 border-2 border-slate-200 shadow-md text-center space-y-5">
+          <h4 class="text-2xl font-black text-slate-800">Skor Tantangan Benar/Salah Anda</h4>
+          <span class="text-4xl font-black text-amber-600" id="mq-final-score">0</span>
+          <div class="grid grid-cols-2 gap-3 max-w-xs mx-auto text-xs">
+            <div class="p-3 bg-emerald-50 rounded-xl font-bold text-emerald-800">Tepat: <span id="mq-correct-count">0</span></div>
+            <div class="p-3 bg-rose-50 rounded-xl font-bold text-rose-800">Keliru: <span id="mq-wrong-count">0</span></div>
+          </div>
+          <button onclick="startMiniQuizGame()" class="px-5 py-2.5 bg-amber-500 text-white rounded-xl text-xs font-bold">Coba Lagi (Soal Baru)</button>
+        </div>
+      </div>
+
+      <!-- Area Game TTS -->
+      <div id="tts-game-area" class="hidden max-w-5xl mx-auto space-y-6">
+        <div class="flex items-center justify-between pb-2">
+          <button onclick="backToQuizHub()" class="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center space-x-1.5">
+            <i class="fa-solid fa-arrow-left"></i><span>Pilih Kuis Lain</span>
+          </button>
+          <span class="px-3 py-1 bg-rose-50 border border-rose-200 text-rose-700 rounded-full text-xs font-black">
+            TTS Santai: Masalah Sosial Kelompok (10 Kata Gampang)
+          </span>
+        </div>
+
+        <div class="bg-white rounded-3xl p-5 sm:p-7 border-2 border-slate-200 shadow-sm space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
+            <div>
+              <h4 class="text-base sm:text-lg font-black text-slate-800">Teka-Teki Silang: Masalah Sosial Santai</h4>
+              <p class="text-xs text-slate-500 mt-0.5">Ketik huruf pada kotak putih. Ada 5 kali kuota bantuan huruf!</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <button onclick="revealTTSHint()" id="btn-tts-hint" class="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 shadow-sm">
+                <i class="fa-solid fa-lightbulb text-amber-500"></i>
+                <span>Bantuan Huruf</span>
+                <span id="tts-hint-counter" class="px-1.5 py-0.5 bg-amber-200 text-amber-900 rounded-md text-[10px] font-black">5 / 5</span>
+              </button>
+              <button onclick="resetTTS()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold">
+                <i class="fa-solid fa-rotate-left"></i><span>Reset</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <div class="lg:col-span-7 flex flex-col items-center">
+              <div class="p-3 bg-slate-900 rounded-3xl shadow-lg border-4 border-slate-800 overflow-x-auto max-w-full">
+                <div id="tts-grid" class="grid grid-cols-10 gap-1 select-none" style="grid-template-columns: repeat(10, minmax(28px, 36px));"></div>
+              </div>
+            </div>
+            <div class="lg:col-span-5 space-y-4 text-xs">
+              <div class="p-4 bg-rose-50/60 border border-rose-200 rounded-2xl space-y-2">
+                <div class="text-rose-800 font-black uppercase text-[11px]"><i class="fa-solid fa-arrow-right mr-1"></i>Mendatar (Across)</div>
+                <div class="space-y-2 max-h-52 overflow-y-auto pr-1 custom-scroll" id="tts-clues-across"></div>
+              </div>
+              <div class="p-4 bg-indigo-50/60 border border-indigo-200 rounded-2xl space-y-2">
+                <div class="text-indigo-800 font-black uppercase text-[11px]"><i class="fa-solid fa-arrow-down mr-1"></i>Menurun (Down)</div>
+                <div class="space-y-2 max-h-52 overflow-y-auto pr-1 custom-scroll" id="tts-clues-down"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+            <div id="tts-status-badge" class="text-xs font-semibold text-slate-500">Ketik kata yang Anda tahu, gunakan bantuan huruf jika ragu!</div>
+            <button onclick="checkTTSAnswers()" class="px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white font-extrabold rounded-2xl text-xs sm:text-sm shadow-md transition">
+              <i class="fa-solid fa-circle-check mr-1.5"></i>Periksa & Kumpulkan Jawaban TTS
+            </button>
+          </div>
+        </div>
+
+        <div id="tts-result-card" class="hidden bg-white rounded-3xl p-6 sm:p-8 border-2 border-slate-200 shadow-md text-center space-y-5">
+          <h4 class="text-2xl font-black text-slate-800">Skor Teka-Teki Silang Anda</h4>
+          <span class="text-4xl font-black text-rose-600" id="tts-final-score">0</span>
+          <div class="grid grid-cols-2 gap-3 max-w-xs mx-auto text-xs">
+            <div class="p-3 bg-emerald-50 rounded-xl font-bold text-emerald-800">Kata Tepat: <span id="tts-correct-words">0 / 10</span></div>
+            <div class="p-3 bg-rose-50 rounded-xl font-bold text-rose-800">Keliru/Kosong: <span id="tts-wrong-words">0 / 10</span></div>
+          </div>
+          <button onclick="resetTTS(); document.getElementById('tts-result-card').classList.add('hidden');" class="px-5 py-2.5 bg-rose-600 text-white rounded-xl text-xs font-bold">Coba Mainkan Lagi</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: DATA SISWA -->
+    <section id="tab-siswa-content" class="tab-pane hidden space-y-6">
+      <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h3 class="text-lg font-black text-slate-800">Direktori Data Siswa SMAN 12 Gowa</h3>
+            <p class="text-xs text-slate-500">Data kepesertaan siswa kelas XII tahun ajaran aktif.</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="exportStudentsToCSV()" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center space-x-1.5">
+              <i class="fa-solid fa-file-csv"></i><span>Ekspor CSV</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+          <div class="sm:col-span-2 relative">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input type="text" id="search-student-input" oninput="renderStudentsTable()" placeholder="Cari nama siswa atau NIS..."
+              class="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 outline-none">
+          </div>
+          <div>
+            <select id="filter-kelas-select" onchange="renderStudentsTable()"
+              class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-brand-500 outline-none">
+              <option value="ALL">Semua Kelas</option>
+              <option value="XII IPS 1">XII IPS 1</option>
+              <option value="XII IPS 2">XII IPS 2</option>
+              <option value="XII IPA 1">XII IPA 1</option>
+              <option value="XII IPA 2">XII IPA 2</option>
+              <option value="XII IPA 3">XII IPA 3</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-200">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-100 text-slate-700 uppercase font-black tracking-wider border-b border-slate-200">
+              <tr>
+                <th class="p-3.5">No</th>
+                <th class="p-3.5">NIS</th>
+                <th class="p-3.5">Nama Lengkap Siswa</th>
+                <th class="p-3.5">Kelas</th>
+                <th class="p-3.5">Status Partisipasi</th>
+              </tr>
+            </thead>
+            <tbody id="student-table-body" class="divide-y divide-slate-100 text-slate-700"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-auto border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-1">
+      <p class="font-bold text-slate-700">SOSIOPEDIA - Portal Pendidikan Sosiologi SMA Negeri 12 Gowa</p>
+      <p>Created by: <span class="font-extrabold text-brand-700">MUH. FADHLI NUGRAHA M</span></p>
+      <p class="text-[11px] text-slate-400">Diproteksi dan Terintegrasi untuk Pembelajaran Berbasis HOTS 2026</p>
+    </div>
+  </footer>
+
+  <!-- MODAL ADMIN AUTH -->
+  <div id="modal-admin-auth" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl border border-slate-200 space-y-5 text-center">
+      <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 text-xl font-black">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div>
+        <h4 class="text-base font-black text-slate-800">Verifikasi PIN Guru / Admin</h4>
+        <p class="text-xs text-slate-500 mt-1">Masukkan PIN 2202 untuk membuka kunci jawaban rubrik.</p>
+      </div>
+      <div>
+        <input type="password" id="admin-pin-input" maxlength="20" placeholder="Ketik PIN..." autocomplete="off"
+          onkeydown="if(event.key === 'Enter') verifyAdminPin();"
+          class="w-full text-center tracking-widest text-lg font-black py-3 bg-slate-50 border border-slate-300 rounded-2xl outline-none focus:ring-2 focus:ring-brand-500">
+        <p id="admin-pin-error" class="hidden text-rose-600 text-[11px] font-bold mt-2">PIN salah! Pastikan memasukkan PIN 2202.</p>
+      </div>
+      <div class="flex items-center space-x-2">
+        <button type="button" onclick="closeAdminAuthModal()" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold">Batal</button>
+        <button type="button" onclick="verifyAdminPin()" class="flex-1 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition shadow-sm">Verifikasi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PANEL GURU -->
+  <div id="modal-admin-panel" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl border border-slate-200 space-y-6">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <h4 class="text-base font-black text-slate-800 flex items-center space-x-2">
+          <i class="fa-solid fa-sliders text-brand-600"></i><span>Pengaturan Panel Guru</span>
+        </h4>
+        <button onclick="closeAdminPanelModal()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+      </div>
+      <div class="space-y-4 text-xs text-slate-600">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">URL Google Apps Script (Web App /exec):</label>
+          <input type="url" id="admin-sheet-url" placeholder="https://script.google.com/macros/s/.../exec"
+            class="w-full p-3 bg-slate-50 border border-slate-300 rounded-2xl text-xs font-mono focus:ring-2 focus:ring-brand-500 outline-none">
+          <p class="text-[11px] text-slate-400 mt-1">Hasil ujian siswa akan otomatis terkirim tanpa diketahui siswa.</p>
+        </div>
+      </div>
+      <div class="flex justify-end space-x-2 pt-2 border-t border-slate-100">
+        <button onclick="saveAdminSettings()" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold shadow-sm">Simpan Pengaturan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT & DATABASE ================= -->
+  <script>
+    const ADMIN_PIN = "2202";
+    const ASSESSMENT_ACCESS_CODE = "SMAN12";
+    let teacherAuthenticated = false;
+    let pendingAction = null;
+    let pendingRubricButton = null;
+
+    let currentStudent = { name: "", kelas: "" };
+    let sessionQuestions = [];
+    let currentQuestionIdx = 0;
+    let studentAnswers = {};
+
+    // DATA SISWA DATABASE SMAN 12 GOWA
+    const STUDENTS_DATABASE = [
+      { nis: "1001", name: "Andi Ahmad Fauzan", kelas: "XII IPS 1", status: "Aktif" },
+      { nis: "1002", name: "Siti Nurhaliza", kelas: "XII IPS 1", status: "Aktif" },
+      { nis: "1003", name: "Muh. Fadhli Nugraha", kelas: "XII IPS 1", status: "Aktif" },
+      { nis: "1004", name: "Nurul Aisyah", kelas: "XII IPS 2", status: "Aktif" },
+      { nis: "1005", name: "Ahmad Zulfikar", kelas: "XII IPA 1", status: "Aktif" },
+      { nis: "1006", name: "Dewi Lestari", kelas: "XII IPA 2", status: "Aktif" },
+      { nis: "1007", name: "Rezky Pratama", kelas: "XII IPA 3", status: "Aktif" }
+    ];
+
+    // BANK SOAL SIMULASI TKA 40 BUTIR
+    const QUIZ_QUESTIONS = Array.from({ length: 40 }, (_, i) => ({
+      id: i + 1,
+      category: i < 15 ? "Pengelompokan Sosial" : (i < 28 ? "Permasalahan Sosial" : "Kesetaraan Sosial"),
+      question: `Butir Soal Simulasi TKA Sosiologi Nomor ${i + 1}: Analisislah fenomena sosiologis berikut mengenai struktur kelompok dan masyarakat multikultural di Indonesia...`,
+      options: [
+        "Pilihan A: Keteraturan sosial terbentuk melalui konsensus nilai yang dijunjung bersama.",
+        "Pilihan B: Terjadi segregasi akibat kuatnya batas primordialisme sempit.",
+        "Pilihan C: Mobilitas sosial vertikal naik mempercepat integrasi kebudayaan.",
+        "Pilihan D: Disorganisasi kelompok dipicu oleh ketimpangan struktural ekonomi.",
+        "Pilihan E: Konflik horizontal muncul akibat dominasi kelompok mayoritas."
+      ],
+      correctIndex: 0,
+      explanation: "Pembahasan TKA: Fenomena tersebut mencerminkan dinamika integrasi sosial di mana konsensus nilai menjadi fondasi stabilitas kelompok masyarakat."
+    }));
+
+    // DATA MATERI POKOK 1: PENGELOMPOKAN SOSIAL
+    const PENGELOMPOKAN_MODULES = [
+      {
+        title: "1. Hakikat dan Dasar Pembentukan Kelompok Sosial",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Hakikat Kelompok Sosial</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-4'>
+            Manusia adalah makhluk sosial (<i>zoon politicon</i> menurut Aristoteles) yang tidak dapat hidup sendiri tanpa bantuan sesama. Dorongan naluriah untuk hidup bersama (<i>gregariousness</i>) melahirkan interaksi dan membentuk kelompok sosial.
+          </p>
+          <h5 class='text-xs font-bold text-slate-800 uppercase mb-2'>Syarat Kelompok Sosial (Soerjono Soekanto):</h5>
+          <ul class='list-disc list-inside text-xs sm:text-sm text-slate-600 space-y-1.5 mb-4'>
+            <li>Adanya kesadaran sebagai bagian dari kelompok yang bersangkutan.</li>
+            <li>Ada hubungan timbal balik (interaksi) antar anggota kelompok.</li>
+            <li>Memiliki faktor pengikat yang sama (kesamaan nasib, hobi, ideologi, atau darah).</li>
+            <li>Berstruktur, berkaidah, dan memiliki sistem pola perilaku tertentu.</li>
+          </ul>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Komunitas Peduli Lingkungan",
+            problem: "Sekelompok pemuda di Gowa membentuk wadah peduli sungai setelah melihat tingginya pencemaran sampah plastik. Analisislah apakah komunitas ini memenuhi syarat kelompok sosial menurut Soerjono Soekanto!",
+            rubric: "Siswa harus menguraikan terpenuhinya syarat: kesadaran bersama (peduli lingkungan), interaksi rutin, faktor pengikat yang sama (kepedulian ekologis), serta struktur organisasi internal."
+          },
+          {
+            title: "Studi Kasus 2: Antrean di Loket Stasiun",
+            problem: "Puluhan orang berdiri mengantre tiket kereta di stasiun secara tertib tanpa saling mengenal. Apakah kerumunan antrean ini dapat dikategorikan sebagai kelompok sosial? Jelaskan alasannya!",
+            rubric: "Bukan kelompok sosial, melainkan kerumunan (crowd) atau kategori sosial sementara, karena tidak memiliki kesadaran kelompok yang permanen, struktur, maupun interaksi timbal balik yang intens."
+          }
+        ]
+      },
+      {
+        title: "2. Faktor Pendorong Pembentukan Kelompok",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Faktor Pendorong Utama</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            <b>1. Teori Kedekatan (Propinquity Theory):</b> Individu cenderung membentuk kelompok dengan orang-orang yang berada di sekitar geografis yang sama (tetangga, rekan sekantor).<br>
+            <b>2. Kesamaan Minat & Tujuan:</b> Dorongan untuk mencapai tujuan bersama (organisasi belajar, klub olahraga).<br>
+            <b>3. Kesamaan Asal-usul & Keturunan:</b> Ikatan genealogis (paguyuban marga, ikatan keluarga daerah).
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Perantau Asal Sulawesi Selatan",
+            problem: "Perantau asal Sulawesi Selatan di berbagai kota besar mendirikan kerukunan keluarga (KKSS). Faktor apakah yang paling dominan mendorong terbentuknya kelompok tersebut?",
+            rubric: "Faktor kesamaan asal-usul, ikatan genealogis, dan kebutuhan solidaritas kultural di perantauan."
+          },
+          {
+            title: "Studi Kasus 2: Kelompok Belajar Sebaya",
+            problem: "Siswa kelas XII membentuk kelompok belajar persiapan UTBK berdasarkan kesamaan target universitas impian. Analisislah faktor pembentuknya!",
+            rubric: "Faktor kesamaan tujuan, minat akademik, dan kebutuhan strategis dalam menghadapi ujian seleksi."
+          }
+        ]
+      },
+      {
+        title: "3. Klasifikasi Kelompok: Paguyuban (Gemeinschaft) & Patembayan (Gesellschaft)",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Teori Ferdinand Tönnies</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            <b>• Gemeinschaft (Paguyuban):</b> Bentuk kehidupan bersama yang intim, privat, dan eksklusif. Didasari ikatan batin murni (keluarga, rukun tetangga tradisional).<br>
+            <b>• Gesellschaft (Patembayan):</b> Ikatan lahir yang bersifat pokok untuk jangka waktu pendek, berorientasi pamrih/ekonomis (PT, CV, serikat buruh kontrak).
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Hubungan Kerja di Perusahaan Multinasional",
+            problem: "Karyawan di sebuah korporasi besar berinteraksi secara formal berdasarkan kontrak kerja dan target profit. Termasuk jenis kelompok apa dan berikan argumennya!",
+            rubric: "Patembayan (Gesellschaft), karena didasarkan pada hubungan rasional, kontraktual, dan orientasi ekonomi praktis."
+          },
+          {
+            title: "Studi Kasus 2: Arisan Keluarga Besar",
+            problem: "Kegiatan arisan bulanan keluarga besar di kampung halaman yang diwarnai kekeluargaan erat. Klasifikasikan bentuk kelompok ini menurut Tönnies!",
+            rubric: "Gemeinschaft of blood atau mind (Paguyuban), karena didasari ikatan batin yang kuat dan kekeluargaan."
+          }
+        ]
+      },
+      {
+        title: "4. In-Group dan Out-Group",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Pandangan William Graham Sumner</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            <b>• In-Group:</b> Kelompok di mana individu merasa dirinya menjadi anggota (rasa 'kita' / <i>we-feeling</i> sangat kuat).<br>
+            <b>• Out-Group:</b> Kelompok di luar dirinya yang sering kali diasosiasikan dengan perasaan 'mereka' atau bahkan prasangka/antagonisme.
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Suporter Klub Sepak Bola",
+            problem: "Suporter klub bola fanatik menganggap kelompoknya sebagai yang terbaik dan memandang suporter klub lain sebagai musuh. Bagaimana sosiologi menjelaskan gejala in-group dan out-group ini?",
+            rubric: "Menjelaskan batas tegas antara loyalitas kelompok sendiri (in-group) dan potensi prasangka terhadap kelompok luar (out-group)."
+          },
+          {
+            title: "Studi Kasus 2: Loyalitas Alumni Sekolah",
+            problem: "Alumni SMA Negeri 12 Gowa memiliki ikatan solidaritas yang kuat saat bertemu di perguruan tinggi melawan alumni sekolah lain.",
+            rubric: "Refleksi in-group feeling yang positif dalam membangun jejaring alumni."
+          }
+        ]
+      },
+      {
+        title: "5. Primary Group dan Secondary Group",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Klasifikasi Charles Horton Cooley</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            <b>• Primary Group (Kelompok Primer):</b> Hubungan tatap muka yang akrab, personal, dan menyeluruh (keluarga, sahabat karib).<br>
+            <b>• Secondary Group (Kelompok Sekunder):</b> Hubungan formal, berorientasi tugas, dan tidak mendalam secara personal (organisasi profesi, birokrasi).
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Hubungan Dokter dan Pasien di Rumah Sakit",
+            problem: "Interaksi antara dokter spesialis dan pasien di ruang pemeriksaan rumah sakit. Termasuk kelompok primer atau sekunder? Jelaskan!",
+            rubric: "Kelompok sekunder, karena bersifat formal, kontraktual, berorientasi penyembuhan medis semata."
+          },
+          {
+            title: "Studi Kasus 2: Perkumpulan Sahabat Masa Kecil",
+            problem: "Sekelompok teman masa kecil yang selalu saling membantu dalam suka dan duka tanpa pamrih.",
+            rubric: "Kelompok primer, ditandai keintiman emosional dan hubungan personal yang mendalam."
+          }
+        ]
+      },
+      {
+        title: "6. Membership Group dan Reference Group",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Teori Robert K. Merton</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            <b>• Membership Group:</b> Kelompok di mana seseorang secara resmi tercatat dan menjadi anggota.<br>
+            <b>• Reference Group:</b> Kelompok acuan yang digunakan seseorang sebagai standar untuk membentuk kepribadian, sikap, dan perilakunya (meskipun ia bukan anggota kelompok tersebut).
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Gaya Hidup Atlet Profesional",
+            problem: "Seorang remaja biasa meniru gaya latihan, disiplin, dan pola makan bintang sepak bola dunia idolanya. Analisislah konsep membership group dan reference group kasus ini!",
+            rubric: "Remaja tersebut memiliki membership group di klub lokalnya, namun menjadikan atlet dunia sebagai reference group."
+          },
+          {
+            title: "Studi Kasus 2: Anggota Parpol dan Tokoh Intelektual",
+            problem: "Seorang politisi muda meniru cara berpidato seorang negarawan senior idealnya.",
+            rubric: "Negarawan senior berfungsi sebagai reference group bagi pembentukan gaya politik kader muda tersebut."
+          }
+        ]
+      },
+      {
+        title: "7. Dinamika Perkembangan Kelompok (Bruce Tuckman)",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Teori 5 Tahap Pembentukan Kelompok</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            1. <b>Forming (Pembentukan):</b> Orientasi awal.<br>
+            2. <b>Storming (Pemberontakan/Konflik):</b> Gesekan antar anggota.<br>
+            3. <b>Norming (Penormaan):</b> Rekonsiliasi dan kesepakatan aturan.<br>
+            4. <b>Performing (Berkinerja Tinggi):</b> Kolaborasi efektif.<br>
+            5. <b>Adjourning (Penyelesaian/Pembubaran):</b> Tugas selesai.
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Panitia Pensi Sekolah",
+            problem: "Panitia pentas seni sempat bersitegang hebat mengenai alokasi anggaran, namun akhirnya berhasil menyepakati SOP kerja sama. Di tahap manakah panitia tersebut berada?",
+            rubric: "Berada di transisi dari tahap Storming menuju Norming."
+          },
+          {
+            title: "Studi Kasus 2: Tim Riset Karya Ilmiah",
+            problem: "Tim peneliti bekerja secara sinergis, saling percaya, dan berhasil menyelesaikan laporan tepat waktu.",
+            rubric: "Tahap Performing (kinerja optimal)."
+          }
+        ]
+      }
+    ];
+
+    // DATA MATERI POKOK 2: PERMASALAHAN SOSIAL DALAM LINGKUP KELOMPOK SOSIAL
+    const PERMASALAHAN_MODULES = [
+      {
+        title: "1. Pengertian Masalah Sosial",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Konseptual Masalah Sosial</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            Menurut Soerjono Soekanto, masalah sosial adalah suatu ketidaksesuaian antara unsur-unsur kebudayaan atau masyarakat, yang membahayakan kehidupan kelompok sosial. Masalah sosial menyangkut nilai-nilai sosial yang diabaikan.
+          </p>
+          <ul class='list-disc list-inside text-xs sm:text-sm text-slate-600 space-y-1.5 mb-3'>
+            <li><b>Elemen Objektif:</b> Kondisi nyata yang dapat diamati dan diukur dalam masyarakat.</li>
+            <li><b>Elemen Subjektif:</b> Keyakinan kolektif bahwa kondisi tersebut tidak diinginkan dan harus segera diatasi.</li>
+          </ul>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Maraknya Judi Online di Kalangan Remaja",
+            problem: "Peningkatan kasus kecanduan judi online di kalangan remaja desa maupun kota telah merusak produktivitas belajar. Analisislah fenomena ini dari sudut pandang elemen objektif dan subjektif masalah sosial!",
+            rubric: "Elemen objektif: peningkatan jumlah pemain dan kerugian finansial nyata. Elemen subjektif: keresahan kolektif masyarakat dan orang tua yang menuntut pemberantasan."
+          },
+          {
+            title: "Studi Kasus 2: Vandalisme Fasilitas Umum",
+            problem: "Aksi perusakan halte bus oleh oknum tidak bertanggung jawab yang dianggap meresahkan warga kota.",
+            rubric: "Memenuhi kriteria masalah sosial karena melanggar nilai ketertiban umum dan merugikan kepentingan publik."
+          }
+        ]
+      },
+      {
+        title: "2. Penyebab Timbulnya Masalah Sosial",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Empat Faktor Determinan Utama</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            <b>1. Faktor Ekonomis:</b> Pengangguran, kemiskinan, inflasi, dan krisis distribusi pendapatan.<br>
+            <b>2. Faktor Biologis:</b> Wabah penyakit menular, malnutrisi/stunting, dan disabilitas fisik massal.<br>
+            <b>3. Faktor Psikologis:</b> Tekanan jiwa, skizofrenia, stres sosial, dan penyimpangan perilaku akibat trauma.<br>
+            <b>4. Faktor Kebudayaan:</b> <i>Cultural lag</i> (ketertinggalan budaya), disorganisasi keluarga, dan modernisasi tanpa filter.
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Cultural Lag Era Digital",
+            problem: "Kemajuan teknologi kecerdasan buatan (AI) disalahgunakan untuk kejahatan siber (deepfake scams) karena regulasi hukum terlambat mengantisipasinya. Konsep apa yang menjelaskan hal ini?",
+            rubric: "Konsep Cultural Lag (Ketertinggalan Budaya), di mana perangkat materiil berkembang lebih cepat daripada kesiapan non-materiil (norma/etika hukum)."
+          },
+          {
+            title: "Studi Kasus 2: Depresi Massal Akibat PHK Korporasi",
+            problem: "Gelombang pemutusan hubungan kerja (PHK) massal memicu lonjakan kasus stres dan gangguan psikologis di perkotaan.",
+            rubric: "Kombinasi faktor ekonomis (PHK) yang memicu faktor psikologis (depresi/stres sosial)."
+          }
+        ]
+      },
+      {
+        title: "3a. Masalah Sosial di Indonesia: Kemiskinan",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Dimensi & Lingkaran Setan Kemiskinan</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            <b>• Kemiskinan Absolut:</b> Pendapatan di bawah garis kemiskinan minimum untuk mencukupi kebutuhan dasar.<br>
+            <b>• Kemiskinan Relatif:</b> Standar kemiskinan berdasarkan perbandingan tingkat kesejahteraan antar kelompok.<br>
+            <b>• Kemiskinan Kultural:</b> Akibat mentalitas, adat, atau sikap hidup (malas, pasrah pada nasib).<br>
+            <b>• Kemiskinan Struktural:</b> Akibat kebijakan ekonomi atau struktur kekuasaan yang timpang (Ragnar Nurkse: <i>Vicious Circle of Poverty</i>).
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Petani Penggarap Tanpa Lahan",
+            problem: "Petani di perdesaan tetap miskin turun-temurun meski bekerja keras, karena seluruh hasil panen habis untuk membayar sewa tanah kepada tuan tanah pemilik modal. Jenis kemiskinan apa ini?",
+            rubric: "Kemiskinan Struktural, disebabkan oleh ketimpangan penguasaan alat produksi (tanah) dan sistem bagi hasil yang eksploitatif."
+          },
+          {
+            title: "Studi Kasus 2: Budaya Cepat Puas dan Enggan Berinovasi",
+            problem: "Sebagian masyarakat menolak modernisasi pertanian karena menganggap cara leluhur sudah cukup meskipun hasilnya minim.",
+            rubric: "Kemiskinan Kultural, yang berakar dari resistensi terhadap perubahan nilai kemajuan."
+          }
+        ]
+      },
+      {
+        title: "3b. Masalah Sosial di Indonesia: Perilaku Kekerasan",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Segitiga Kekerasan Johan Galtung</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            <b>1. Kekerasan Langsung (Direct Violence):</b> Tindakan agresi fisik kasatmata (tawuran, perundungan).<br>
+            <b>2. Kekerasan Struktural:</b> Penindasan yang dilembagakan melalui sistem sosial/ekonomi (eksploitasi buruh).<br>
+            <b>3. Kekerasan Kultural:</b> Aspek kebudayaan (agama, ideologi, seni) yang melegitimasi kekerasan langsung atau struktural.
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Perundungan Senioritas di Sekolah",
+            problem: "Tradisi 'ospek' tersembunyi di mana senior melakukan kekerasan fisik dengan dalih 'membangun mental disiplin junior'. Bedah kasus ini menggunakan konsep Johan Galtung!",
+            rubric: "Kekerasan langsung (pemukulan fisik), didukung kekerasan kultural (mitos bahwa senioritas harus dihormati lewat kekerasan)."
+          },
+          {
+            title: "Studi Kasus 2: Upah Murah Buruh Pabrik",
+            problem: "Sistem pengupahan di bawah standar minimum yang dipaksakan oleh regulasi perusahaan demi keuntungan korporasi.",
+            rubric: "Kekerasan Struktural, kekerasan yang tertanam dalam sistem dan struktur birokrasi ekonomi."
+          }
+        ]
+      },
+      {
+        title: "3c. Masalah Sosial di Indonesia: Ketenagakerjaan (Pengangguran)",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Jenis & Akar Pengangguran</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            <b>• Pengangguran Friksional:</b> Peralihan pekerjaan antar pencari kerja.<br>
+            <b>• Pengangguran Struktural:</b> Ketidaksesuaian skill tenaga kerja dengan tuntutan industri (misal: otomatisasi mesin AI).<br>
+            <b>• Pengangguran Musiman:</b> Fluktuasi pekerjaan musiman (petani di musim kemarau).<br>
+            <b>• Pengangguran Siklis:</b> Akibat kelesuan ekonomi makro dan resesi global.
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Otomasi Pabrik & Pemutusan Karyawan",
+            problem: "Pabrik tekstil mengganti ribuan buruh manual dengan mesin robotik otomatis, sehingga buruh kehilangan pekerjaan karena tidak memiliki keahlian digital. Jenis pengangguran apa ini?",
+            rubric: "Pengangguran Struktural, akibat perubahan teknologi dan pergeseran struktur skill industri."
+          },
+          {
+            title: "Studi Kasus 2: Pekerja Pertanian di Antara Musim Panen",
+            problem: "Buruh tani di pedesaan menganggur selama 3 bulan menunggu musim tanam berikutnya.",
+            rubric: "Pengangguran Musiman (seasonal unemployment)."
+          }
+        ]
+      },
+      {
+        title: "3d. Masalah Sosial di Indonesia: Kesenjangan Sosial Ekonomi",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Indikator & Dampak Ketimpangan</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            Kesenjangan sosial ekonomi diukur menggunakan <b>Koefisien Gini</b> (skala 0 hingga 1). Nilai mendekati 1 menunjukkan ketimpangan ekstrem antara kelompok kaya dan miskin. Faktor pendorong utama: <i>Urban bias</i>, privatisasi sumber daya, dan monopoli aset modal.
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Kontras Kawasan Elite vs Permukiman Kumuh",
+            problem: "Pembangunan apartemen pencakar langit mewah berbatasan langsung dengan kampung pemukiman kumuh di kota besar. Bagaimana sosiologi menilai fenomena ini?",
+            rubric: "Refleksi nyata kesenjangan sosial ekonomi perkotaan (polarization of space) yang memicu kecemburuan sosial."
+          },
+          {
+            title: "Studi Kasus 2: Akses Layanan Kesehatan Digital",
+            problem: "Masyarakat perkotaan mudah mengakses layanan telemedisin canggih, sementara warga di pulau terpencil kesulitan puskesmas.",
+            rubric: "Ketimpangan struktural infrastruktur dasar (urban bias)."
+          }
+        ]
+      },
+      {
+        title: "3e. Masalah Sosial di Indonesia: Ketidakadilan",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Lima Wujud Ketidakadilan (Anwar Haryono / C.T. Kurien)</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            1. <b>Stereotip:</b> Pelabelan sepihak.<br>
+            2. <b>Marginalisasi:</b> Peminggiran ekonomi/sosial.<br>
+            3. <b>Subordinasi:</b> Penomorduaan peran.<br>
+            4. <b>Dominasi:</b> Penguasaan kelompok mayoritas/kuat atas minoritas.<br>
+            5. <b>Diskriminasi:</b> Perlakuan tidak setara berdasarkan SARA/gender.
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Pembatasan Akses Pekerjaan bagi Penyandang Disabilitas",
+            problem: "Sebuah perusahaan menolak pelamar kerja yang memiliki disabilitas fisik meskipun kompetensinya sangat unggul. Wujud ketidakadilan apa yang terjadi?",
+            rubric: "Diskriminasi dan Marginalisasi hak asasi tenaga kerja."
+          },
+          {
+            title: "Studi Kasus 2: Anggapan Perempuan Hanya Mengurus Rumah Tangga",
+            problem: "Pembatasan hak perempuan untuk menduduki jabatan pimpinan strategis di ranah publik.",
+            rubric: "Subordinasi dan stereotip gender."
+          }
+        ]
+      }
+    ];
+
+    // DATA MATERI POKOK 3: KESETARAAN DALAM PERBEDAAN SOSIAL
+    const KESETARAAN_MODULES = [
+      {
+        title: "1A. Pengertian Keragaman (Keberagaman)",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Diferensiasi Horizontal Masyarakat</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            Keberagaman (pluralitas) adalah kondisi masyarakat yang terdiri atas berbagai perbedaan suku, ras, agama, dan budaya tanpa menempatkan satu kelompok lebih tinggi dari kelompok lainnya (diferensiasi horizontal).
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Kerukunan Umat Beragama di Toleransi Village",
+            problem: "Warga desa saling membantu membangun rumah ibadah umat agama lain secara bergantian. Jelaskan hakikat keragaman horizontal dalam kasus ini!",
+            rubric: "Mencerminkan prinsip kesetaraan horizontal di mana perbedaan keyakinan tidak menghalangi solidaritas sosial."
+          }
+        ]
+      },
+      {
+        title: "1B. Hakikat Masyarakat Multikultural",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Pandangan Ahli</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            <b>• J.S. Furnivall:</b> Masyarakat multikultural adalah masyarakat yang terdiri dari dua atau lebih komunitas yang hidup berdampingan namun tersekat oleh batas-batas kebudayaan dalam satu unit politik.<br>
+            <b>• Clifford Geertz:</b> Indonesia diikat oleh ikatan primodial (<i>aliran, suku bangsa, bahasa, adat istiadat</i>).
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Segmentasi Pasar Tradisional Multi-Etnis",
+            problem: "Di pasar tradisional kota besar, pedagang dari berbagai suku hidup berdampingan secara damai namun masing-masing mempertahankan tradisi kelompoknya. Analisislah menurut konsep Furnivall!",
+            rubric: "Karakteristik masyarakat plural: berdampingan secara fisik namun terfragmentasi dalam kebudayaan masing-masing."
+          }
+        ]
+      },
+      {
+        title: "1C. Faktor Penyebab Masyarakat Multikultural",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Faktor Geografis & Historis Nusantara</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            1. Letak strategis jalur perdagangan dunia (antara Samudra Hindia dan Pasifik).<br>
+            2. Kondisi kepulauan nusantara (ribuan pulau yang terisolasi secara geografis melahirkan kebudayaan lokal unik).<br>
+            3. Variasi iklim dan struktur tanah yang memicu perbedaan mata pencaharian.
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Perbedaan Kultur Masyarakat Pesisir vs Pegunungan",
+            problem: "Masyarakat nelayan pesisir Makassar memiliki karakter terbuka dan tegas, sementara masyarakat agraris pedalaman Toraja menjunjung tinggi ritus leluhur. Apa faktor utamanya?",
+            rubric: "Faktor variasi geografis, ekologis, dan mata pencaharian yang membentuk corak kebudayaan spesifik."
+          }
+        ]
+      },
+      {
+        title: "1D. Unsur-Unsur Perbedaan dalam Masyarakat Multikultural",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Lima Pilar Diferensiasi</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            Suku bangsa (etnisitas), Agama & keyakinan, Ras & ciri fisik biologis, Klan / garis kekerabatan genealogis, serta Gender & profesi.
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Sistem Kekerabatan Matrilineal Minangkabau",
+            problem: "Garis keturunan dan pewarisan harta pusaka ditarik dari pihak ibu. Unsur perbedaan apa yang menonjol?",
+            rubric: "Unsur Klan / sistem kekerabatan genealogis (matrilineal)."
+          }
+        ]
+      },
+      {
+        title: "2. Problematika Keberagaman",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Ancaman Disintegrasi Bangsa</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            <b>• Etnosentrisme:</b> Menganggap kebudayaan sendiri lebih superior.<br>
+            <b>• Primordialisme:</b> Loyalitas berlebihan pada ikatan sempit (suku/daerah asal).<br>
+            <b>• Stereotip & Prasangka:</b> Penilaian keliru yang memicu konflik horizontal.<br>
+            <b>• Polarisasi Politik Identitas:</b> Politisasi SARA demi kepentingan kekuasaan.
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Konflik Antar-Kelompok Pemuda Akibat Salah Paham",
+            problem: "Pelecehan verbal sepele antar-pemuda dari dusun berbeda berujung tawuran massal karena diprovokasi sentimen kedaerahan. Identifikasi akar masalah sosiologisnya!",
+            rubric: "Etnosentrisme sempit dan primordialisme yang mudah tersulut provokasi."
+          }
+        ]
+      },
+      {
+        title: "3. Hakikat Kesetaraan dalam Kehidupan Masyarakat Indonesia",
+        content: `
+          <h4 class='text-base font-black text-slate-800 mb-2'>Kesetaraan Hakiki & Konstitusional</h4>
+          <p class='text-xs sm:text-sm text-slate-600 leading-relaxed mb-3'>
+            Kesetaraan diwujudkan melalui prinsip <i>Equality before the law</i> (Pasal 27 UUD 1945), kesetaraan kesempatan, dan tindakan afirmatif (<i>affirmative action</i>) bagi kelompok rentan/tertinggal.
+          </p>
+        `,
+        cases: [
+          {
+            title: "Studi Kasus 1: Kebijakan Kursi Afirmatif Parlemen",
+            problem: "Pemerintah menetapkan persentase kuota keterwakilan perempuan dalam bursa pencalonan legislatif. Apa tujuan sosiologis kebijakan ini?",
+            rubric: "Affirmative action untuk mengikis ketimpangan subordinasi gender dan mewujudkan kesetaraan substantif."
+          }
+        ]
+      }
+    ];
+
+    // BANK SOAL MCQ KUIS (15 SOAL CADANGAN PENGELOMPOKAN SOSIAL)
+    const MCQ_QUIZ_POOL = [
+      { question: "Aristoteles menyebut manusia sebagai Zoon Politicon, yang artinya...", options: ["Makhluk sosial bernaluri hidup bersama", "Makhluk ekonomi pencari laba", "Makhluk politik penguasa", "Makhluk mandiri soliter"], correctAnswer: "Makhluk sosial bernaluri hidup bersama", explanation: "Zoon Politicon bermakna kodrat manusia untuk selalu hidup berkelompok." },
+      { question: "Syarat utama kelompok sosial menurut Soerjono Soekanto adalah...", options: ["Adanya kesadaran anggota dan timbal balik", "Jumlah anggota minimal 100 orang", "Memiliki kantor resmi", "Terikat undang-undang negara"], correctAnswer: "Adanya kesadaran anggota dan timbal balik", explanation: "Kesadaran berinteraksi dan timbal balik adalah fondasi utama." },
+      { question: "Paguyuban (Gemeinschaft) menurut Ferdinand Tönnies didasari oleh...", options: ["Ikatan batin murni dan alamiah", "Kontrak kerja rasional dan pamrih", "Regulasi hukum birokrasi modern", "Tujuan ekonomi jangka pendek"], correctAnswer: "Ikatan batin murni dan alamiah", explanation: "Gemeinschaft bercirikan keintiman emosional murni." },
+      { question: "Patembayan (Gesellschaft) dicirikan oleh...", options: ["Hubungan kontraktual dan bersifat sementara", "Ikatan kekeluargaan turun-temurun", "Solidaritas mekanik tradisional", "Keterikatan darah yang kuat"], correctAnswer: "Hubungan kontraktual dan bersifat sementara", explanation: "Gesellschaft berorientasi untung-rugi dan rasional." },
+      { question: "Kelompok di mana individu merasa menjadi bagian di dalamnya disebut...", options: ["In-Group", "Out-Group", "Reference Group", "Secondary Group"], correctAnswer: "In-Group", explanation: "In-group ditandai rasa 'kita' (we-feeling) yang kuat." },
+      { question: "Kelompok acuan untuk membentuk sikap dan kepribadian disebut...", options: ["Reference Group", "Membership Group", "Primary Group", "Crowd"], correctAnswer: "Reference Group", explanation: "Reference group menjadi standar acuan perilaku." },
+      { question: "Tahap konflik dan gesekan dalam dinamika kelompok Bruce Tuckman adalah...", options: ["Storming", "Forming", "Norming", "Performing"], correctAnswer: "Storming", explanation: "Storming adalah fase penyesuaian yang memicu benturan argumen." },
+      { question: "Hubungan akrab, personal, dan mendalam terdapat pada...", options: ["Primary Group", "Secondary Group", "Gesellschaft", "Out-Group"], correctAnswer: "Primary Group", explanation: "Primary group diwakili oleh keluarga dan sahabat karib." },
+      { question: "Teori Propinquity menekankan pembentukan kelompok berdasarkan...", options: ["Kedekatan geografis tempat tinggal", "Kesamaan suku bangsa", "Tingkat kekayaan materi", "Tingkat pendidikan formal"], correctAnswer: "Kedekatan geografis tempat tinggal", explanation: "Propinquity adalah teori kedekatan ruang/lokasi." },
+      { question: "Contoh nyata dari Membership Group adalah...", options: ["Status keanggotaan resmi di sekolah/partai", "Artis idola yang ditiru gayanya", "Kelompok sosial khayalan", "Masyarakat luar negeri"], correctAnswer: "Status keanggotaan resmi di sekolah/partai", explanation: "Membership group adalah kelompok tempat seseorang terdaftar resmi." },
+      { question: "Solidaritas mekanik menurut Durkheim didasari oleh...", options: ["Kesadaran kolektif dan keseragaman", "Pembagian kerja yang sangat kompleks", "Kontrak hukum formal", "Perbedaan profesi individu"], correctAnswer: "Kesadaran kolektif dan keseragaman", explanation: "Solidaritas mekanik dominan di masyarakat tradisional." },
+      { question: "Ciri utama kelompok sekunder adalah...", options: ["Hubungan formal dan berorientasi tugas", "Keintiman batin yang kekal", "Jumlah anggota sangat sedikit", "Bebas dari aturan administrasi"], correctAnswer: "Hubungan formal dan berorientasi tugas", explanation: "Kelompok sekunder bersifat rasional dan berorientasi hasil." },
+      { question: "Sikap memandang kelompok luar dengan curiga disebut...", options: ["Prasangka / Out-group hostility", "Altruisme sosial", "Asimilasi kebudayaan", "Integrasi nasional"], correctAnswer: "Prasangka / Out-group hostility", explanation: "Out-group sering memicu prasangka negatif." },
+      { question: "Tahap akhir dari siklus kelompok Bruce Tuckman adalah...", options: ["Adjourning", "Forming", "Storming", "Norming"], correctAnswer: "Adjourning", explanation: "Adjourning adalah tahap pembubaran setelah tugas selesai." },
+      { question: "Faktor pendorong utama terbentuknya paguyuban adalah...", options: ["Kesamaan darah dan ikatan batin", "Gaji bulanan yang pasti", "Target laba perusahaan", "Kontrak kerja notaris"], correctAnswer: "Kesamaan darah dan ikatan batin", explanation: "Paguyuban berpijak pada afeksi batiniah." }
+    ];
+
+    // BANK SOAL TRUE/FALSE KUIS (15 SOAL CADANGAN PENGELOMPOKAN SOSIAL)
+    const MINI_QUIZ_POOL = [
+      { statement: "Aristoteles menyatakan manusia adalah Zoon Politicon yang berarti makhluk sosial bernaluri berkelompok.", correctAnswer: "BENAR", explanation: "Pernyataan benar sesuai kodrat manusia." },
+      { statement: "Kerumunan di pasar saat belanja mendesak dapat dikategorikan sebagai kelompok sosial permanen.", correctAnswer: "SALAH", explanation: "Kerumunan bersifat sementara dan tidak terorganisir." },
+      { statement: "Ferdinand Tönnies membagi bentuk kelompok menjadi Gemeinschaft dan Gesellschaft.", correctAnswer: "BENAR", explanation: "Konseptual dasar paguyuban dan patembayan." },
+      { statement: "Hubungan antar-karyawan pabrik kontrak korporasi tergolong bentuk Gemeinschaft.", correctAnswer: "SALAH", explanation: "Hubungan tersebut tergolong Gesellschaft (Patembayan)." },
+      { statement: "In-Group adalah kelompok sosial di mana individu merasa menjadi anggotanya.", correctAnswer: "BENAR", explanation: "In-group ditandai ikatan 'we-feeling'." },
+      { statement: "Reference Group selalu sama persis dengan Membership Group seseorang.", correctAnswer: "SALAH", explanation: "Seseorang bisa menjadikan kelompok lain sebagai acuan tanpa harus menjadi anggotanya." },
+      { statement: "Tahap Storming dalam teori Bruce Tuckman ditandai dengan munculnya konflik dan perbedaan pendapat.", correctAnswer: "BENAR", explanation: "Storming adalah fase badai dan penyesuaian." },
+      { statement: "Keluarga inti merupakan contoh utama dari Primary Group.", correctAnswer: "BENAR", explanation: "Keluarga memenuhi kriteria keintiman primer." },
+      { statement: "Teori Propinquity menyatakan kelompok terbentuk karena faktor perbedaan suku.", correctAnswer: "SALAH", explanation: "Propinquity berkaitan dengan kedekatan geografis." },
+      { statement: "Charles Horton Cooley mempopulerkan konsep Primary Group.", correctAnswer: "BENAR", explanation: " Cooley adalah pencetus teori kelompok primer dan sekunder." },
+      { statement: "Out-Group senantiasa mendatangkan keuntungan bagi kelompok lain tanpa konflik.", correctAnswer: "SALAH", explanation: "Out-group sering memicu prasangka atau antagomisme." },
+      { statement: "Solidaritas organik ditemukan dalam masyarakat modern dengan pembagian kerja tinggi.", correctAnswer: "BENAR", explanation: "Teori klasik Emil Durkheim." },
+      { statement: "Organisasi serikat buruh kontrak termasuk ke dalam kelompok primer.", correctAnswer: "SALAH", explanation: "Serikat buruh adalah kelompok sekunder." },
+      { statement: "Kesadaran kelompok dan interaksi timbal balik adalah syarat mutlak Soerjono Soekanto.", correctAnswer: "BENAR", explanation: "Sesuai teori sosiologi baku." },
+      { statement: "Tahap Performing adalah saat kelompok mencapai kinerja kolaborasi puncak.", correctAnswer: "BENAR", explanation: "Tahap kematangan kelompok." }
+    ];
+
+    // DATA TEKA-TEKI SILANG (TTS 10 KATA SANTAI - MASALAH SOSIAL KELOMPOK)
+    const TTS_GRID_SIZE = 10;
+    const TTS_WORDS = [
+      { num: 1, word: "MISKIN", row: 0, col: 0, dir: "A", clue: "Kekurangan materi / lawan kaya", answer: "MISKIN" },
+      { num: 2, word: "SOSIAL", row: 0, col: 0, dir: "D", clue: "Segala hal tentang masyarakat", answer: "SOSIAL" },
+      { num: 3, word: "AMAN", row: 0, col: 3, dir: "D", clue: "Bebas dari bahaya kejahatan", answer: "AMAN" },
+      { num: 4, word: "HUKUM", row: 2, col: 5, dir: "D", clue: "Aturan resmi negara ber sanksi", answer: "HUKUM" },
+      { num: 5, word: "ADIL", row: 3, col: 0, dir: "A", clue: "Memperlakukan setara / tidak pilih kasih", answer: "ADIL" },
+      { num: 6, word: "KOTA", row: 3, col: 8, dir: "D", clue: "Pusat keramaian dan gedung bertingkat", answer: "KOTA" },
+      { num: 7, word: "KONFLIK", row: 5, col: 1, dir: "A", clue: "Pertikaian / perkelahian kelompok", answer: "KONFLIK" },
+      { num: 8, word: "MAJU", row: 5, col: 6, dir: "D", clue: "Perubahan ke arah lebih modern", answer: "MAJU" },
+      { num: 9, word: "NORMA", row: 7, col: 3, dir: "A", clue: "Aturan / tata tertib sopan santun", answer: "NORMA" },
+      { num: 10, word: "DAMAI", row: 9, col: 2, dir: "A", clue: "Suasana rukun tanpa permusuhan", answer: "DAMAI" }
+    ];
+
+    let activeMCQQuestions = [];
+    let mcqCurrentIdx = 0;
+    let mcqScore = 0;
+    let mcqTimer = null;
+    let mcqTimeLeft = 30;
+    let mcqIsAnswered = false;
+
+    let activeMiniQuizQuestions = [];
+    let mqCurrentIdx = 0;
+    let mqScore = 0;
+    let mqTimer = null;
+    let mqTimeLeft = 30;
+    let mqIsAnswered = false;
+
+    let ttsBoardCells = {};
+    let ttsHintRemaining = 5;
+
+    // NAVIGASI UTAMA
+    function switchTab(tabKey) {
+      const tabs = ['home', 'simulasi', 'materi', 'assessment', 'quiz', 'siswa'];
+      tabs.forEach(t => {
+        const pane = document.getElementById(`tab-${t}-content`);
+        const navBtn = document.getElementById(`nav-${t}`);
+        const mobBtn = document.getElementById(`mob-${t}`);
+
+        if (t === tabKey) {
+          if (pane) pane.classList.remove('hidden');
+          if (navBtn) navBtn.className = "tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 bg-brand-600 text-white shadow-sm";
+          if (mobBtn) mobBtn.className = "flex-1 py-1.5 px-2 text-center text-xs font-bold text-brand-600 border-b-2 border-brand-600 whitespace-nowrap";
+        } else {
+          if (pane) pane.classList.add('hidden');
+          if (navBtn) navBtn.className = "tab-btn px-4 py-2 rounded-xl text-xs font-bold transition flex items-center space-x-2 text-slate-600 hover:text-slate-900 hover:bg-white";
+          if (mobBtn) mobBtn.className = "flex-1 py-1.5 px-2 text-center text-xs font-bold text-slate-500 hover:text-slate-800 whitespace-nowrap";
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ASSESSMENT STANDBY
+    function verifyAssessmentAccess() {
+      const inputCode = (document.getElementById("assessment-input-code")?.value || "").trim().toUpperCase();
+      const nama = (document.getElementById("assessment-input-nama")?.value || "").trim();
+      const kelas = document.getElementById("assessment-input-kelas")?.value || "";
+      const errorElem = document.getElementById("assessment-code-error");
+
+      if (inputCode !== ASSESSMENT_ACCESS_CODE) {
+        if (errorElem) errorElem.classList.remove("hidden");
+        document.getElementById("assessment-input-code").focus();
+        return;
+      }
+      if (errorElem) errorElem.classList.add("hidden");
+      if (!nama || !kelas) {
+        alert("Silakan lengkapi Nama Lengkap dan pilih Kelas Anda terlebih dahulu!");
+        return;
+      }
+
+      document.getElementById("assessment-display-name").innerText = nama;
+      document.getElementById("assessment-display-kelas").innerText = `Kelas: ${kelas}`;
+      document.getElementById("assessment-auth-pane").classList.add("hidden");
+      document.getElementById("assessment-exam-pane").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetAssessment() {
+      document.getElementById("assessment-input-code").value = "";
+      document.getElementById("assessment-input-nama").value = "";
+      document.getElementById("assessment-input-kelas").value = "";
+      document.getElementById("assessment-exam-pane").classList.add("hidden");
+      document.getElementById("assessment-auth-pane").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // SUB-NAVIGASI MATERI
+    function switchMateriSub(subKey) {
+      const views = ['daftar', 'pengelompokan', 'permasalahan', 'kesetaraan'];
+      views.forEach(v => {
+        const el = document.getElementById(`view-materi-${v}`);
+        const btn = document.getElementById(`subnav-${v}`);
+        if (v === subKey) {
+          if (el) el.classList.remove('hidden');
+          if (btn) btn.className = "px-4 py-2 rounded-xl text-xs font-bold transition bg-slate-800 text-white flex items-center space-x-2";
+        } else {
+          if (el) el.classList.add('hidden');
+          if (btn) btn.className = "px-4 py-2 rounded-xl text-xs font-bold transition bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 flex items-center space-x-1.5";
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function shuffleArray(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    // SIMULASI TKA
+    function startSimulation() {
+      const nama = document.getElementById("sim-input-nama").value.trim();
+      const kelas = document.getElementById("sim-input-kelas").value;
+
+      if (!nama || !kelas) {
+        alert("Silakan masukkan nama lengkap dan pilih kelas Anda terlebih dahulu!");
+        return;
+      }
+
+      currentStudent = { name: nama, kelas: kelas };
+      studentAnswers = {};
+      currentQuestionIdx = 0;
+
+      sessionQuestions = QUIZ_QUESTIONS.map(q => {
+        const correctText = q.options[q.correctIndex];
+        const shuffled = shuffleArray(q.options);
+        return {
+          id: q.id,
+          category: q.category,
+          question: q.question,
+          options: shuffled,
+          correctText: correctText,
+          explanation: q.explanation
+        };
+      });
+
+      document.getElementById("exam-display-name").innerText = nama;
+      document.getElementById("exam-display-kelas").innerText = `Kelas: ${kelas}`;
+      document.getElementById("simulasi-reg-pane").classList.add("hidden");
+      document.getElementById("simulasi-result-pane").classList.add("hidden");
+      document.getElementById("simulasi-exam-pane").classList.remove("hidden");
+
+      renderPalette();
+      loadQuestion(0);
+    }
+
+    function loadQuestion(idx) {
+      currentQuestionIdx = idx;
+      const q = sessionQuestions[idx];
+
+      document.getElementById("exam-progress-counter").innerText = `${idx + 1} / ${sessionQuestions.length}`;
+      document.getElementById("exam-question-num-tag").innerText = `Nomor ${idx + 1}`;
+      document.getElementById("exam-question-category").innerText = q.category;
+      document.getElementById("exam-question-text").innerText = q.question;
+
+      const labels = ["A", "B", "C", "D", "E"];
+      const container = document.getElementById("exam-options-container");
+      container.innerHTML = q.options.map((opt, i) => {
+        const isSelected = (studentAnswers[q.id] === opt);
+        const style = isSelected 
+          ? "border-brand-500 bg-brand-50 text-brand-900 ring-2 ring-brand-500 font-bold"
+          : "border-slate-200 hover:border-brand-400 bg-white text-slate-700";
+
+        return `
+          <button onclick="selectOption('${opt.replace(/'/g, "\\'")}')" class="w-full text-left p-3.5 border-2 rounded-2xl transition flex items-center space-x-3 text-xs sm:text-sm ${style}">
+            <span class="w-7 h-7 rounded-xl bg-slate-100 flex items-center justify-center font-black text-xs text-slate-700 flex-shrink-0">${labels[i]}</span>
+            <span class="flex-1 leading-relaxed">${opt}</span>
+          </button>
+        `;
+      }).join('');
+
+      document.getElementById("btn-prev-q").disabled = (idx === 0);
+      document.getElementById("btn-prev-q").className = idx === 0 
+        ? "px-5 py-2.5 bg-slate-100 text-slate-300 rounded-xl text-xs font-bold cursor-not-allowed flex items-center space-x-1.5"
+        : "px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center space-x-1.5";
+
+      const nextBtn = document.getElementById("btn-next-q");
+      if (idx === sessionQuestions.length - 1) {
+        nextBtn.innerHTML = `<span>Selesai & Kumpul</span><i class="fa-solid fa-check-double text-[10px]"></i>`;
+        nextBtn.onclick = finishExam;
+      } else {
+        nextBtn.innerHTML = `<span>Berikutnya</span><i class="fa-solid fa-arrow-right text-[10px]"></i>`;
+        nextBtn.onclick = nextQuestion;
+      }
+
+      renderPalette();
+    }
+
+    function selectOption(optText) {
+      const q = sessionQuestions[currentQuestionIdx];
+      studentAnswers[q.id] = optText;
+      loadQuestion(currentQuestionIdx);
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIdx < sessionQuestions.length - 1) loadQuestion(currentQuestionIdx + 1);
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIdx > 0) loadQuestion(currentQuestionIdx - 1);
+    }
+
+    function jumpToQuestion(idx) {
+      loadQuestion(idx);
+    }
+
+    function renderPalette() {
+      const grid = document.getElementById("exam-palette-grid");
+      if (!grid) return;
+      grid.innerHTML = sessionQuestions.map((q, i) => {
+        const isAnswered = Boolean(studentAnswers[q.id]);
+        const isCurrent = (i === currentQuestionIdx);
+        let cls = "w-full aspect-square rounded-xl text-xs font-black flex items-center justify-center transition border ";
+        if (isCurrent) cls += "ring-2 ring-brand-500 border-brand-500 bg-brand-600 text-white";
+        else if (isAnswered) cls += "bg-brand-500 border-brand-600 text-white";
+        else cls += "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100";
+        return `<button onclick="jumpToQuestion(${i})" class="${cls}">${i + 1}</button>`;
+      }).join('');
+    }
+
+    function finishExam() {
+      let correct = 0, wrong = 0, empty = 0;
+      sessionQuestions.forEach(q => {
+        const ans = studentAnswers[q.id];
+        if (!ans) empty++;
+        else if (ans === q.correctText) correct++;
+        else wrong++;
+      });
+
+      const finalScore = Math.round((correct / sessionQuestions.length) * 100);
+
+      document.getElementById("result-student-name").innerText = currentStudent.name;
+      document.getElementById("result-student-kelas").innerText = `Kelas: ${currentStudent.kelas}`;
+      document.getElementById("result-final-score").innerText = finalScore;
+      document.getElementById("result-correct-count").innerText = correct;
+      document.getElementById("result-wrong-count").innerText = wrong;
+      document.getElementById("result-empty-count").innerText = empty;
+
+      renderReviewItems();
+
+      const sheetUrl = localStorage.getItem("gowa_sheet_app_url");
+      if (sheetUrl) {
+        try {
+          fetch(sheetUrl, {
+            method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" },
+            body: JSON.stringify({ timestamp: new Date().toLocaleString("id-ID"), nama: currentStudent.name, kelas: currentStudent.kelas, skor: finalScore })
+          }).catch(e => {});
+        } catch(e) {}
+      }
+
+      document.getElementById("simulasi-exam-pane").classList.add("hidden");
+      document.getElementById("simulasi-result-pane").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderReviewItems() {
+      const container = document.getElementById("review-items-container");
+      container.innerHTML = sessionQuestions.map((q, i) => {
+        const userAns = studentAnswers[q.id];
+        const isCorrect = (userAns === q.correctText);
+        const badge = isCorrect
+          ? `<span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-full font-bold text-[10px]">Benar</span>`
+          : `<span class="px-2.5 py-0.5 bg-rose-100 text-rose-800 rounded-full font-bold text-[10px]">Salah</span>`;
+
+        return `
+          <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-black text-slate-800">Nomor ${i + 1} (${q.category})</span>
+              ${badge}
+            </div>
+            <p class="text-xs sm:text-sm font-semibold text-slate-800">${q.question}</p>
+            <div class="p-3 bg-slate-50 rounded-xl space-y-1 text-xs">
+              <p><b>Jawaban Anda:</b> <span class="${isCorrect ? 'text-emerald-700 font-bold' : 'text-rose-700 font-bold'}">${userAns || '(Tidak Dijawab)'}</span></p>
+              <p><b>Kunci Jawaban:</b> <span class="text-emerald-700 font-bold">${q.correctText}</span></p>
+            </div>
+            <div class="p-3 bg-brand-50/60 border border-brand-100 rounded-xl text-xs text-brand-950 space-y-1">
+              <span class="font-bold flex items-center space-x-1"><i class="fa-solid fa-lightbulb text-brand-600"></i><span>Pembahasan:</span></span>
+              <p class="leading-relaxed text-slate-600">${q.explanation}</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function resetSimulation() {
+      document.getElementById("sim-input-nama").value = "";
+      document.getElementById("sim-input-kelas").value = "";
+      document.getElementById("simulasi-result-pane").classList.add("hidden");
+      document.getElementById("simulasi-exam-pane").classList.add("hidden");
+      document.getElementById("simulasi-reg-pane").classList.remove("hidden");
+    }
+
+    // RENDER MATERI POKOK
+    function renderPengelompokanTopics() {
+      const menu = document.getElementById("pengelompokan-topics-menu");
+      if (!menu) return;
+      menu.innerHTML = PENGELOMPOKAN_MODULES.map((m, i) => `
+        <button onclick="showPengelompokanDetail(${i})" class="w-full text-left p-3 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition text-xs font-bold text-slate-700 flex items-center justify-between">
+          <span>${m.title}</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
+        </button>
+      `).join('');
+      showPengelompokanDetail(0);
+    }
+
+    function showPengelompokanDetail(idx) {
+      const m = PENGELOMPOKAN_MODULES[idx];
+      const target = document.getElementById("pengelompokan-article-content");
+      if (!target) return;
+      target.innerHTML = `
+        <div class="space-y-4">
+          <span class="px-3 py-1 bg-brand-50 border border-brand-200 text-brand-700 rounded-full text-[11px] font-black uppercase">${m.title}</span>
+          <div class="pt-2 text-slate-700">${m.content}</div>
+          <div class="pt-6 border-t border-slate-100 space-y-4">
+            <h5 class="text-xs font-black uppercase tracking-wider text-slate-800">Latihan Studi Kasus Esai Berbasis HOTS</h5>
+            ${m.cases.map((c, ci) => `
+              <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                <span class="text-xs font-black text-brand-700">${c.title}</span>
+                <p class="text-xs text-slate-700 font-medium">${c.problem}</p>
+                <textarea placeholder="Tuliskan analisis Anda di sini..." class="w-full p-2.5 bg-white border border-slate-200 rounded-xl text-xs outline-none focus:ring-1 focus:ring-brand-500"></textarea>
+                <div class="pt-1 flex items-center justify-between">
+                  <button onclick="requestRubricUnlock('p-${idx}-${ci}')" id="btn-rubric-p-${idx}-${ci}" class="text-[11px] font-bold text-slate-500 hover:text-brand-600 flex items-center space-x-1">
+                    <i class="fa-solid fa-lock text-[10px]"></i><span>Buka Rubrik Kunci (Akses Guru: 2202)</span>
+                  </button>
+                </div>
+                <div id="rubric-box-p-${idx}-${ci}" class="hidden p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 mt-2">
+                  <b>Pedoman Jawaban Ideal:</b> ${c.rubric}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderPermasalahanTopics() {
+      const menu = document.getElementById("permasalahan-topics-menu");
+      if (!menu) return;
+      menu.innerHTML = PERMASALAHAN_MODULES.map((m, i) => `
+        <button onclick="showPermasalahanDetail(${i})" class="w-full text-left p-3 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition text-xs font-bold text-slate-700 flex items-center justify-between">
+          <span>${m.title}</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
+        </button>
+      `).join('');
+      showPermasalahanDetail(0);
+    }
+
+    function showPermasalahanDetail(idx) {
+      const m = PERMASALAHAN_MODULES[idx];
+      const target = document.getElementById("permasalahan-article-content");
+      if (!target) return;
+      target.innerHTML = `
+        <div class="space-y-4">
+          <span class="px-3 py-1 bg-rose-50 border border-rose-200 text-rose-700 rounded-full text-[11px] font-black uppercase">${m.title}</span>
+          <div class="pt-2 text-slate-700">${m.content}</div>
+          <div class="pt-6 border-t border-slate-100 space-y-4">
+            <h5 class="text-xs font-black uppercase tracking-wider text-slate-800">Latihan Studi Kasus Esai Berbasis HOTS</h5>
+            ${m.cases.map((c, ci) => `
+              <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                <span class="text-xs font-black text-rose-700">${c.title}</span>
+                <p class="text-xs text-slate-700 font-medium">${c.problem}</p>
+                <textarea placeholder="Tuliskan analisis Anda di sini..." class="w-full p-2.5 bg-white border border-slate-200 rounded-xl text-xs outline-none focus:ring-1 focus:ring-rose-500"></textarea>
+                <div class="pt-1 flex items-center justify-between">
+                  <button onclick="requestRubricUnlock('pm-${idx}-${ci}')" id="btn-rubric-pm-${idx}-${ci}" class="text-[11px] font-bold text-slate-500 hover:text-rose-600 flex items-center space-x-1">
+                    <i class="fa-solid fa-lock text-[10px]"></i><span>Buka Rubrik Kunci (Akses Guru: 2202)</span>
+                  </button>
+                </div>
+                <div id="rubric-box-pm-${idx}-${ci}" class="hidden p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 mt-2">
+                  <b>Pedoman Jawaban Ideal:</b> ${c.rubric}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderKesetaraanTopics() {
+      const menu = document.getElementById("kesetaraan-topics-menu");
+      if (!menu) return;
+      menu.innerHTML = KESETARAAN_MODULES.map((m, i) => `
+        <button onclick="showKesetaraanDetail(${i})" class="w-full text-left p-3 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition text-xs font-bold text-slate-700 flex items-center justify-between">
+          <span>${m.title}</span><i class="fa-solid fa-chevron-right text-[10px] text-slate-400"></i>
+        </button>
+      `).join('');
+      showKesetaraanDetail(0);
+    }
+
+    function showKesetaraanDetail(idx) {
+      const m = KESETARAAN_MODULES[idx];
+      const target = document.getElementById("kesetaraan-article-content");
+      if (!target) return;
+      target.innerHTML = `
+        <div class="space-y-4">
+          <span class="px-3 py-1 bg-indigo-50 border border-indigo-200 text-indigo-700 rounded-full text-[11px] font-black uppercase">${m.title}</span>
+          <div class="pt-2 text-slate-700">${m.content}</div>
+          <div class="pt-6 border-t border-slate-100 space-y-4">
+            <h5 class="text-xs font-black uppercase tracking-wider text-slate-800">Latihan Studi Kasus Esai Berbasis HOTS</h5>
+            ${m.cases.map((c, ci) => `
+              <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                <span class="text-xs font-black text-indigo-700">${c.title}</span>
+                <p class="text-xs text-slate-700 font-medium">${c.problem}</p>
+                <textarea placeholder="Tuliskan analisis Anda di sini..." class="w-full p-2.5 bg-white border border-slate-200 rounded-xl text-xs outline-none focus:ring-1 focus:ring-indigo-500"></textarea>
+                <div class="pt-1 flex items-center justify-between">
+                  <button onclick="requestRubricUnlock('ks-${idx}-${ci}')" id="btn-rubric-ks-${idx}-${ci}" class="text-[11px] font-bold text-slate-500 hover:text-indigo-600 flex items-center space-x-1">
+                    <i class="fa-solid fa-lock text-[10px]"></i><span>Buka Rubrik Kunci (Akses Guru: 2202)</span>
+                  </button>
+                </div>
+                <div id="rubric-box-ks-${idx}-${ci}" class="hidden p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 mt-2">
+                  <b>Pedoman Jawaban Ideal:</b> ${c.rubric}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // KUIS HUB & 3 MODES
+    function selectQuizMode(mode) {
+      document.getElementById("quiz-hub-catalog").classList.add("hidden");
+      document.getElementById("mcq-game-area").classList.add("hidden");
+      document.getElementById("miniquiz-game-area").classList.add("hidden");
+      document.getElementById("tts-game-area").classList.add("hidden");
+
+      if (mode === 'mcq') {
+        document.getElementById("mcq-game-area").classList.remove("hidden");
+        document.getElementById("mcq-start-card").classList.remove("hidden");
+        document.getElementById("mcq-play-card").classList.add("hidden");
+        document.getElementById("mcq-result-card").classList.add("hidden");
+      } else if (mode === 'tf') {
+        document.getElementById("miniquiz-game-area").classList.remove("hidden");
+        document.getElementById("mq-start-card").classList.remove("hidden");
+        document.getElementById("mq-play-card").classList.add("hidden");
+        document.getElementById("mq-result-card").classList.add("hidden");
+      } else if (mode === 'tts') {
+        document.getElementById("tts-game-area").classList.remove("hidden");
+        initTTSBoard();
+      }
+    }
+
+    function backToQuizHub() {
+      clearInterval(mcqTimer);
+      clearInterval(mqTimer);
+      document.getElementById("mcq-game-area").classList.add("hidden");
+      document.getElementById("miniquiz-game-area").classList.add("hidden");
+      document.getElementById("tts-game-area").classList.add("hidden");
+      document.getElementById("quiz-hub-catalog").classList.remove("hidden");
+    }
+
+    function startMCQGame() {
+      const pool = shuffleArray(MCQ_QUIZ_POOL).slice(0, 5);
+      activeMCQQuestions = pool.map(item => ({
+        question: item.question,
+        options: shuffleArray(item.options),
+        correctAnswer: item.correctAnswer,
+        explanation: item.explanation
+      }));
+
+      mcqCurrentIdx = 0;
+      mcqScore = 0;
+      document.getElementById("mcq-start-card").classList.add("hidden");
+      document.getElementById("mcq-result-card").classList.add("hidden");
+      document.getElementById("mcq-play-card").classList.remove("hidden");
+      loadMCQQuestion(0);
+    }
+
+    function loadMCQQuestion(idx) {
+      clearInterval(mcqTimer);
+      mcqIsAnswered = false;
+      mcqTimeLeft = 30;
+
+      const q = activeMCQQuestions[idx];
+      document.getElementById("mcq-progress-label").innerText = `${idx + 1} / 5`;
+      document.getElementById("mcq-question-text").innerText = q.question;
+      document.getElementById("mcq-feedback-box").classList.add("hidden");
+      document.getElementById("mcq-timer-display").innerText = "30s";
+      document.getElementById("mcq-timer-bar").style.width = "100%";
+      document.getElementById("mcq-timer-bar").className = "h-full bg-brand-500 transition-all duration-1000 ease-linear";
+
+      const labels = ["A", "B", "C", "D"];
+      const container = document.getElementById("mcq-options-container");
+      container.innerHTML = q.options.map((opt, i) => `
+        <button onclick="handleMCQAnswer('${opt.replace(/'/g, "\\'")}', this)" class="mcq-btn w-full text-left p-3.5 border-2 border-slate-200 hover:border-brand-500 bg-white rounded-2xl flex items-center space-x-3 text-xs sm:text-sm font-semibold transition">
+          <span class="w-7 h-7 rounded-xl bg-slate-100 flex items-center justify-center font-black text-xs text-slate-700 flex-shrink-0">${labels[i]}</span>
+          <span class="flex-1">${opt}</span>
+        </button>
+      `).join('');
+
+      mcqTimer = setInterval(() => {
+        mcqTimeLeft--;
+        document.getElementById("mcq-timer-display").innerText = `${mcqTimeLeft}s`;
+        document.getElementById("mcq-timer-bar").style.width = `${(mcqTimeLeft / 30) * 100}%`;
+        if (mcqTimeLeft <= 10) document.getElementById("mcq-timer-bar").className = "h-full bg-rose-500 transition-all duration-1000 ease-linear";
+        if (mcqTimeLeft <= 0) { clearInterval(mcqTimer); timeOutMCQ(); }
+      }, 1000);
+    }
+
+    function handleMCQAnswer(chosenAnswer, clickedBtn) {
+      if (mcqIsAnswered) return;
+      mcqIsAnswered = true;
+      clearInterval(mcqTimer);
+
+      const q = activeMCQQuestions[mcqCurrentIdx];
+      const isCorrect = (chosenAnswer === q.correctAnswer);
+      if (isCorrect) mcqScore++;
+
+      document.querySelectorAll(".mcq-btn").forEach(btn => {
+        btn.disabled = true;
+        const text = btn.querySelector("span:last-child")?.innerText?.trim();
+        if (text === q.correctAnswer) btn.className = "w-full text-left p-3.5 border-2 border-emerald-500 bg-emerald-100 text-emerald-950 rounded-2xl flex items-center space-x-3 text-xs sm:text-sm font-bold";
+        else if (text === chosenAnswer && !isCorrect) btn.className = "w-full text-left p-3.5 border-2 border-rose-500 bg-rose-100 text-rose-950 rounded-2xl flex items-center space-x-3 text-xs sm:text-sm font-bold line-through";
+        else btn.className = "w-full text-left p-3.5 border border-slate-200 bg-slate-50 text-slate-400 rounded-2xl flex items-center space-x-3 text-xs sm:text-sm opacity-50";
+      });
+
+      const box = document.getElementById("mcq-feedback-box");
+      box.classList.remove("hidden");
+      box.className = isCorrect ? "p-4 rounded-2xl border text-xs space-y-2 bg-emerald-50 border-emerald-200" : "p-4 rounded-2xl border text-xs space-y-2 bg-rose-50 border-rose-200";
+      document.getElementById("mcq-feedback-title").innerHTML = isCorrect ? `<i class="fa-solid fa-circle-check text-emerald-600"></i><span class="text-emerald-800 font-bold">Jawaban Anda Benar!</span>` : `<i class="fa-solid fa-circle-xmark text-rose-600"></i><span class="text-rose-800 font-bold">Jawaban Kurang Tepat</span>`;
+      document.getElementById("mcq-feedback-expl").innerText = q.explanation;
+    }
+
+    function timeOutMCQ() {
+      if (mcqIsAnswered) return;
+      mcqIsAnswered = true;
+      const q = activeMCQQuestions[mcqCurrentIdx];
+      document.querySelectorAll(".mcq-btn").forEach(btn => btn.disabled = true);
+      const box = document.getElementById("mcq-feedback-box");
+      box.classList.remove("hidden");
+      box.className = "p-4 rounded-2xl border text-xs space-y-2 bg-amber-50 border-amber-200";
+      document.getElementById("mcq-feedback-title").innerHTML = `<i class="fa-solid fa-clock text-amber-600"></i><span class="text-amber-800 font-bold">Waktu Habis!</span>`;
+      document.getElementById("mcq-feedback-expl").innerText = q.explanation;
+    }
+
+    function nextMCQQuestion() {
+      if (mcqCurrentIdx < activeMCQQuestions.length - 1) {
+        mcqCurrentIdx++;
+        loadMCQQuestion(mcqCurrentIdx);
+      } else {
+        document.getElementById("mcq-play-card").classList.add("hidden");
+        document.getElementById("mcq-result-card").classList.remove("hidden");
+        document.getElementById("mcq-final-score").innerText = Math.round((mcqScore / 5) * 100);
+        document.getElementById("mcq-correct-count").innerText = mcqScore;
+        document.getElementById("mcq-wrong-count").innerText = 5 - mcqScore;
+      }
+    }
+
+    function startMiniQuizGame() {
+      const pool = shuffleArray(MINI_QUIZ_POOL).slice(0, 5);
+      activeMiniQuizQuestions = pool.map(item => ({
+        statement: item.statement,
+        options: shuffleArray(["BENAR", "SALAH"]),
+        correctAnswer: item.correctAnswer,
+        explanation: item.explanation
+      }));
+
+      mqCurrentIdx = 0;
+      mqScore = 0;
+      document.getElementById("mq-start-card").classList.add("hidden");
+      document.getElementById("mq-result-card").classList.add("hidden");
+      document.getElementById("mq-play-card").classList.remove("hidden");
+      loadMiniQuizQuestion(0);
+    }
+
+    function loadMiniQuizQuestion(idx) {
+      clearInterval(mqTimer);
+      mqIsAnswered = false;
+      mqTimeLeft = 30;
+
+      const q = activeMiniQuizQuestions[idx];
+      document.getElementById("mq-progress-label").innerText = `${idx + 1} / 5`;
+      document.getElementById("mq-question-text").innerText = q.statement;
+      document.getElementById("mq-feedback-box").classList.add("hidden");
+      document.getElementById("mq-timer-display").innerText = "30s";
+      document.getElementById("mq-timer-bar").style.width = "100%";
+      document.getElementById("mq-timer-bar").className = "h-full bg-amber-500 transition-all duration-1000 ease-linear";
+
+      const container = document.getElementById("mq-options-container");
+      container.innerHTML = q.options.map(opt => `
+        <button onclick="handleMiniQuizAnswer('${opt}')" id="btn-mq-${opt}" class="p-4 rounded-2xl border-2 font-black text-sm transition text-center ${opt === 'BENAR' ? 'border-emerald-300 bg-emerald-50 hover:bg-emerald-100 text-emerald-950' : 'border-rose-300 bg-rose-50 hover:bg-rose-100 text-rose-950'}">
+          ${opt}
+        </button>
+      `).join('');
+
+      mqTimer = setInterval(() => {
+        mqTimeLeft--;
+        document.getElementById("mq-timer-display").innerText = `${mqTimeLeft}s`;
+        document.getElementById("mq-timer-bar").style.width = `${(mqTimeLeft / 30) * 100}%`;
+        if (mqTimeLeft <= 10) document.getElementById("mq-timer-bar").className = "h-full bg-rose-500 transition-all duration-1000 ease-linear";
+        if (mqTimeLeft <= 0) { clearInterval(mqTimer); timeOutMiniQuiz(); }
+      }, 1000);
+    }
+
+    function handleMiniQuizAnswer(chosen) {
+      if (mqIsAnswered) return;
+      mqIsAnswered = true;
+      clearInterval(mqTimer);
+
+      const q = activeMiniQuizQuestions[mqCurrentIdx];
+      const isCorrect = (chosen === q.correctAnswer);
+      if (isCorrect) mqScore++;
+
+      q.options.forEach(opt => {
+        const btn = document.getElementById(`btn-mq-${opt}`);
+        if (!btn) return;
+        btn.disabled = true;
+        if (opt === q.correctAnswer) btn.className = "p-4 rounded-2xl border-2 border-emerald-500 bg-emerald-100 text-emerald-950 font-black text-sm ring-2 ring-emerald-500";
+        else if (opt === chosen && !isCorrect) btn.className = "p-4 rounded-2xl border-2 border-rose-500 bg-rose-100 text-rose-950 font-black text-sm line-through";
+        else btn.className = "p-4 rounded-2xl border border-slate-200 bg-slate-50 text-slate-400 font-bold text-sm opacity-50";
+      });
+
+      const box = document.getElementById("mq-feedback-box");
+      box.classList.remove("hidden");
+      box.className = isCorrect ? "p-4 rounded-2xl border text-xs space-y-2 bg-emerald-50 border-emerald-200" : "p-4 rounded-2xl border text-xs space-y-2 bg-rose-50 border-rose-200";
+      document.getElementById("mq-feedback-title").innerHTML = isCorrect ? `<i class="fa-solid fa-circle-check text-emerald-600"></i><span class="text-emerald-800 font-bold">Analisis Anda Tepat!</span>` : `<i class="fa-solid fa-circle-xmark text-rose-600"></i><span class="text-rose-800 font-bold">Analisis Kurang Tepat</span>`;
+      document.getElementById("mq-feedback-expl").innerText = q.explanation;
+    }
+
+    function timeOutMiniQuiz() {
+      if (mqIsAnswered) return;
+      mqIsAnswered = true;
+      const q = activeMiniQuizQuestions[mqCurrentIdx];
+      q.options.forEach(opt => {
+        const btn = document.getElementById(`btn-mq-${opt}`);
+        if (btn) btn.disabled = true;
+      });
+      const box = document.getElementById("mq-feedback-box");
+      box.classList.remove("hidden");
+      box.className = "p-4 rounded-2xl border text-xs space-y-2 bg-amber-50 border-amber-200";
+      document.getElementById("mq-feedback-title").innerHTML = `<i class="fa-solid fa-clock text-amber-600"></i><span class="text-amber-800 font-bold">Waktu 30 Detik Habis!</span>`;
+      document.getElementById("mq-feedback-expl").innerText = q.explanation;
+    }
+
+    function nextMiniQuizQuestion() {
+      if (mqCurrentIdx < activeMiniQuizQuestions.length - 1) {
+        mqCurrentIdx++;
+        loadMiniQuizQuestion(mqCurrentIdx);
+      } else {
+        document.getElementById("mq-play-card").classList.add("hidden");
+        document.getElementById("mq-result-card").classList.remove("hidden");
+        document.getElementById("mq-final-score").innerText = Math.round((mqScore / 5) * 100);
+        document.getElementById("mq-correct-count").innerText = mqScore;
+        document.getElementById("mq-wrong-count").innerText = 5 - mqScore;
+      }
+    }
+
+    // TTS LOGIC
+    function initTTSBoard() {
+      ttsBoardCells = {};
+      ttsHintRemaining = 5;
+      updateTTSHintButton();
+
+      TTS_WORDS.forEach(item => {
+        for (let i = 0; i < item.answer.length; i++) {
+          const r = item.dir === "A" ? item.row : item.row + i;
+          const c = item.dir === "A" ? item.col + i : item.col;
+          const key = `${r}-${c}`;
+          if (!ttsBoardCells[key]) {
+            ttsBoardCells[key] = { char: item.answer[i], isInput: true, num: (i === 0) ? item.num : null, userChar: '' };
+          } else if (i === 0 && !ttsBoardCells[key].num) {
+            ttsBoardCells[key].num = item.num;
+          }
+        }
+      });
+
+      const grid = document.getElementById("tts-grid");
+      grid.innerHTML = "";
+
+      for (let r = 0; r < TTS_GRID_SIZE; r++) {
+        for (let c = 0; c < TTS_GRID_SIZE; c++) {
+          const key = `${r}-${c}`;
+          const cell = ttsBoardCells[key];
+          const div = document.createElement("div");
+          div.className = "relative w-full aspect-square flex items-center justify-center rounded-lg font-black text-xs sm:text-sm";
+
+          if (cell && cell.isInput) {
+            div.classList.add("bg-white", "border", "border-slate-300", "shadow-sm");
+            if (cell.num) {
+              const span = document.createElement("span");
+              span.innerText = cell.num;
+              span.className = "absolute top-0.5 left-1 text-[9px] font-bold text-rose-600 pointer-events-none";
+              div.appendChild(span);
+            }
+
+            const input = document.createElement("input");
+            input.type = "text";
+            input.maxLength = 1;
+            input.id = `tts-${r}-${c}`;
+            input.className = "w-full h-full text-center uppercase bg-transparent outline-none font-black text-slate-800 text-xs sm:text-sm focus:bg-rose-50 rounded-lg";
+            input.oninput = (e) => {
+              const val = e.target.value.toUpperCase();
+              e.target.value = val;
+              ttsBoardCells[key].userChar = val;
+              if (val) {
+                const nextR = document.getElementById(`tts-${r}-${c + 1}`);
+                const nextD = document.getElementById(`tts-${r + 1}-${c}`);
+                if (nextR) nextR.focus(); else if (nextD) nextD.focus();
+              }
+            };
+            div.appendChild(input);
+          } else {
+            div.classList.add("bg-slate-800/80");
+          }
+          grid.appendChild(div);
+        }
+      }
+
+      const across = TTS_WORDS.filter(w => w.dir === "A");
+      const down = TTS_WORDS.filter(w => w.dir === "D");
+
+      document.getElementById("tts-clues-across").innerHTML = across.map(w => `
+        <div onclick="document.getElementById('tts-${w.row}-${w.col}')?.focus()" class="p-1.5 hover:bg-rose-100 rounded-lg cursor-pointer flex items-start space-x-1.5">
+          <span class="w-4 h-4 bg-rose-600 text-white rounded text-[9px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">${w.num}</span>
+          <span class="text-slate-700">${w.clue} <b class="text-slate-900">(${w.answer.length} Huruf)</b></span>
+        </div>
+      `).join('');
+
+      document.getElementById("tts-clues-down").innerHTML = down.map(w => `
+        <div onclick="document.getElementById('tts-${w.row}-${w.col}')?.focus()" class="p-1.5 hover:bg-indigo-100 rounded-lg cursor-pointer flex items-start space-x-1.5">
+          <span class="w-4 h-4 bg-indigo-600 text-white rounded text-[9px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">${w.num}</span>
+          <span class="text-slate-700">${w.clue} <b class="text-slate-900">(${w.answer.length} Huruf)</b></span>
+        </div>
+      `).join('');
+
+      document.getElementById("tts-result-card").classList.add("hidden");
+      document.getElementById("tts-status-badge").innerText = "Ketik kata yang Anda tahu, gunakan bantuan huruf jika ragu!";
+    }
+
+    function updateTTSHintButton() {
+      const counter = document.getElementById("tts-hint-counter");
+      if (counter) counter.innerText = `${ttsHintRemaining} / 5`;
+    }
+
+    function revealTTSHint() {
+      if (ttsHintRemaining <= 0) {
+        document.getElementById("tts-status-badge").innerText = "Batas 5 kali bantuan telah habis! Lanjutkan analisis Anda.";
+        return;
+      }
+
+      let keys = Object.keys(ttsBoardCells).filter(k => ttsBoardCells[k].isInput && !ttsBoardCells[k].userChar);
+      if (keys.length === 0) {
+        keys = Object.keys(ttsBoardCells).filter(k => ttsBoardCells[k].isInput && ttsBoardCells[k].userChar !== ttsBoardCells[k].char);
+      }
+      if (keys.length === 0) return;
+
+      const randomKey = keys[Math.floor(Math.random() * keys.length)];
+      const [r, c] = randomKey.split('-');
+      const correctChar = ttsBoardCells[randomKey].char;
+      ttsBoardCells[randomKey].userChar = correctChar;
+
+      const input = document.getElementById(`tts-${r}-${c}`);
+      if (input) {
+        input.value = correctChar;
+        input.classList.add("bg-amber-100", "ring-2", "ring-amber-400");
+        input.focus();
+      }
+
+      ttsHintRemaining--;
+      updateTTSHintButton();
+      document.getElementById("tts-status-badge").innerText = `Bantuan 1 huruf diberikan di kotak emas! (${ttsHintRemaining} tersisa)`;
+    }
+
+    function resetTTS() {
+      initTTSBoard();
+    }
+
+    function checkTTSAnswers() {
+      let correctWords = 0;
+      TTS_WORDS.forEach(w => {
+        let isCorrect = true;
+        for (let i = 0; i < w.answer.length; i++) {
+          const r = w.dir === "A" ? w.row : w.row + i;
+          const c = w.dir === "A" ? w.col + i : w.col;
+          const userVal = (ttsBoardCells[`${r}-${c}`]?.userChar || '').toUpperCase();
+          if (userVal !== w.answer[i]) isCorrect = false;
+        }
+        if (isCorrect) correctWords++;
+      });
+
+      Object.keys(ttsBoardCells).forEach(k => {
+        const cell = ttsBoardCells[k];
+        if (cell.isInput) {
+          const [r, c] = k.split('-');
+          const input = document.getElementById(`tts-${r}-${c}`);
+          if (input) {
+            if (cell.userChar === cell.char) input.className = "w-full h-full text-center uppercase bg-emerald-100 text-emerald-950 font-black text-xs sm:text-sm rounded-lg border-2 border-emerald-500";
+            else if (cell.userChar) input.className = "w-full h-full text-center uppercase bg-rose-100 text-rose-950 font-black text-xs sm:text-sm rounded-lg border-2 border-rose-500";
+          }
+        }
+      });
+
+      const finalScore = Math.round((correctWords / TTS_WORDS.length) * 100);
+      document.getElementById("tts-final-score").innerText = finalScore;
+      document.getElementById("tts-correct-words").innerText = `${correctWords} / 10`;
+      document.getElementById("tts-wrong-words").innerText = `${10 - correctWords} / 10`;
+      document.getElementById("tts-result-card").classList.remove("hidden");
+      document.getElementById("tts-result-card").scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // TABEL SISWA
+    function renderStudentsTable() {
+      const tbody = document.getElementById("student-table-body");
+      if (!tbody) return;
+      const search = (document.getElementById("search-student-input")?.value || "").toLowerCase();
+      const filter = document.getElementById("filter-kelas-select")?.value || "ALL";
+
+      const filtered = STUDENTS_DATABASE.filter(s => {
+        const matchSearch = s.name.toLowerCase().includes(search) || s.nis.includes(search);
+        const matchFilter = (filter === "ALL" || s.kelas === filter);
+        return matchSearch && matchFilter;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-slate-400">Tidak ada data siswa yang cocok.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = filtered.map((s, idx) => `
+        <tr class="hover:bg-slate-50 transition border-b border-slate-100">
+          <td class="p-3.5 font-bold">${idx + 1}</td>
+          <td class="p-3.5 font-mono text-slate-500">${s.nis}</td>
+          <td class="p-3.5 font-bold text-slate-800">${s.name}</td>
+          <td class="p-3.5"><span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-lg text-[11px] font-bold">${s.kelas}</span></td>
+          <td class="p-3.5"><span class="px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-full font-bold text-[10px]">${s.status}</span></td>
+        </tr>
+      `).join('');
+    }
+
+    function exportStudentsToCSV() {
+      let csv = "No,NIS,Nama Lengkap,Kelas,Status\n";
+      STUDENTS_DATABASE.forEach((s, idx) => {
+        csv += `"${idx + 1}","${s.nis}","${s.name}","${s.kelas}","${s.status}"\n`;
+      });
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      link.setAttribute("download", "Data_Siswa_SMAN12_GOWA.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // PROTEKSI PIN GURU (2202)
+    function requireTeacherAccess(actionKey) {
+      if (teacherAuthenticated) {
+        executeTeacherAction(actionKey);
+      } else {
+        pendingAction = actionKey;
+        openAdminAuthModal();
+      }
+    }
+
+    function requestRubricUnlock(rubricId) {
+      if (teacherAuthenticated) {
+        toggleRubric(rubricId);
+      } else {
+        pendingAction = 'unlockRubric';
+        pendingRubricButton = rubricId;
+        openAdminAuthModal();
+      }
+    }
+
+    function toggleRubric(rubricId) {
+      const box = document.getElementById(`rubric-box-${rubricId}`);
+      const btn = document.getElementById(`btn-rubric-${rubricId}`);
+      if (!box) return;
+      if (box.classList.contains("hidden")) {
+        box.classList.remove("hidden");
+        if (btn) btn.innerHTML = `<i class="fa-solid fa-lock-open text-[10px]"></i><span>Tutup Rubrik</span>`;
+      } else {
+        box.classList.add("hidden");
+        if (btn) btn.innerHTML = `<i class="fa-solid fa-lock text-[10px]"></i><span>Buka Rubrik Kunci (Akses Guru: 2202)</span>`;
+      }
+    }
+
+    function openAdminAuthModal() {
+      const modal = document.getElementById("modal-admin-auth");
+      const input = document.getElementById("admin-pin-input");
+      const err = document.getElementById("admin-pin-error");
+      if (err) err.classList.add("hidden");
+      if (input) input.value = "";
+      if (modal) modal.classList.remove("hidden");
+      setTimeout(() => input && input.focus(), 100);
+    }
+
+    function closeAdminAuthModal() {
+      document.getElementById("modal-admin-auth").classList.add("hidden");
+      pendingAction = null;
+      pendingRubricButton = null;
+    }
+
+    function verifyAdminPin() {
+      const input = document.getElementById("admin-pin-input");
+      const err = document.getElementById("admin-pin-error");
+      const enteredPin = (input?.value || "").trim().toString();
+
+      if (enteredPin === ADMIN_PIN) {
+        teacherAuthenticated = true;
+        closeAdminAuthModal();
+        if (pendingAction === 'unlockRubric' && pendingRubricButton) {
+          toggleRubric(pendingRubricButton);
+        } else if (pendingAction) {
+          executeTeacherAction(pendingAction);
+        }
+      } else {
+        if (err) err.classList.remove("hidden");
+        if (input) { input.value = ""; input.focus(); }
+      }
+    }
+
+    function executeTeacherAction(actionKey) {
+      if (actionKey === 'adminPanel') {
+        document.getElementById("modal-admin-panel").classList.remove("hidden");
+        const savedUrl = localStorage.getItem("gowa_sheet_app_url") || "";
+        document.getElementById("admin-sheet-url").value = savedUrl;
+      }
+    }
+
+    function closeAdminPanelModal() {
+      document.getElementById("modal-admin-panel").classList.add("hidden");
+    }
+
+    function saveAdminSettings() {
+      const url = document.getElementById("admin-sheet-url").value.trim();
+      localStorage.setItem("gowa_sheet_app_url", url);
+      closeAdminPanelModal();
+      alert("Pengaturan tautan Google Spreadsheet berhasil disimpan!");
+    }
+
+    window.onload = function() {
+      renderPengelompokanTopics();
+      renderPermasalahanTopics();
+      renderKesetaraanTopics();
+      renderStudentsTable();
+      switchTab('home');
+    };
+  </script>
+</body>
+</html>
